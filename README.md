@@ -19,16 +19,30 @@ Ejemplo de respuesta del formulario una vez que se ha rellenado con datos todos 
 
 # Introducción HTML (estructuración html)
 
-
-
-
-
-
-
-
-
-
-
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
+d
 
 # Referencias
 
