@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		.bordeado{
+			border-width: 1;
+			border-style: solid;
+		}
+		#header_page{
+			font-size: 60;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<header id='header_page' class='bordeado'>Título Superior</header>
+	<nav class='bordeado' onclick="menu_work();">Opciones de ménu
+	</nav>
+	<aside id='div-menu'>
+		<ol>
+		    <li class="opcionmenu"><a href="practica1-1.html">Formulario Base</a></li>
+		    <li class="opcionmenu"><a href="practica1-2.html">Formulario Base con Divs semánticos</a></li>
+		    <li class="opcionmenu"><a href="practica1-3.html">Colocando bordes CSS con clases</a></li>
+	  	</ol>
+	</aside>
+	<section class='bordeado'>
+		<form action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data">
+
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name-enviado-por-javi" required>
+			<br>
+
+			<label for="age">Age:</label>
+			<input type="number" id="age" name="age-enviado-por-javi" required>
+			<br>
+			  
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email-enviado-por-javi" required>
+			<br>
+
+			<label for="date">Date:</label>
+			<input type="date" id="date" name="date-enviado-por-javi" required>
+			<br>
+
+			<label for="photo">Photo:</label>
+			<input type="file" id="file" name="file-enviado-por-javi" required>
+			<br>
+
+			<fieldset>
+				<legend>Selecciona tu opción</legend>
+				Sin selección: <input type="checkbox" id='no_choice' name="eleccion_enviado_por_javi[]" value="no_choice" checked><br>
+				Selección 1: <input type="checkbox" id='eleccion1' name="eleccion_enviado_por_javi[]" value="uno"><br>
+				Selección 2: <input type="checkbox" id='eleccion2' name="eleccion_enviado_por_javi[]" value="dos"><br>
+				Seleccion 3: <input type="checkbox" id='eleccion3' name="eleccion_enviado_por_javi[]" value="tres"><br>
+			</fieldset>
+
+			<input type="submit" value="Submit">
+
+		</form>
+	</section>
+
+	<article class='bordeado'>Sección article</article>
+
+	<footer class='bordeado'>Pie de página</footer>
+	
+	<script type="text/javascript">
+		document.getElementById('div-menu').style.display = 'none';
+		function menu_work(){
+			if (document.getElementById('div-menu').style.display == 'none'){
+				document.getElementById('div-menu').style.display = 'block';
+			}
+			else{
+				document.getElementById('div-menu').style.display = 'none';
+			}
+		}
+	</script>
+
+</body>
+
+
+</html>
