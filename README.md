@@ -7,7 +7,7 @@ Repositorio Código utilizado en clase práctica de IU
 # ![Introducción HTML (estructuración html)](/IntroHTML/IntroDivs.md)
 
 
-# ![Referencias] (/refs/referencias.md)
+# ![Referencias](/refs/referencias.md)
 HTML Semántico : https://es.semrush.com/blog/html-semantico/
 
 
