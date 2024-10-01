@@ -18,9 +18,9 @@
 	<script type="text/javascript" src="./js/Manejo_Dom.js"></script>
 </head>
 
-<body>
+<body onload="validar = new datospersonales();">
 
-	<header id='header_page' class='bordeado'>Título Superior</header>
+	<header id='header_page' class='bordeado'>MIS DATOS PERSONALES</header>
 	<nav class='bordeado'><span onclick="menu_work();">Opciones de ménu</span>
 	</nav>
 	<aside id='div-menu'>
@@ -31,10 +31,10 @@
 	  	</ol>
 	</aside>
 	<section class='bordeado'>
-		<form action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data" onsubmit=" return comprobar_datospersonales();">
+		<form action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data" onsubmit="return validar.comprobar_datospersonales();">
 
 			<label for="name">Name:</label>
-			<input type="text" id="name" name="name-enviado-por-javi" onblur="comprobar_name();"><a id="div_error_name"></a>
+			<input type="TEXT" id="name" name="name-enviado-por-javi" onblur="validar.comprobar_name();"><a id="div_error_name"></a>
 			<br>
 
 			<label for="age">Age:</label>
@@ -42,7 +42,8 @@
 			<br>
 			  
 			<label for="email">Email:</label>
-			<input type="text" id="email" name="email-enviado-por-javi" onblur="comprobar_email();">
+			<input type="text" id="email" name="email-enviado-por-javi" onblur="validar.comprobar_email();
+			">
 			<a id="div_error_email"></a>
 			<br>
 

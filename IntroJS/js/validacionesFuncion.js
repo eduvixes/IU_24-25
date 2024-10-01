@@ -5,19 +5,29 @@ function min_size(id, minsize){
 	let elemento = document.getElementById(id);
 	switch (elemento.tagName){
 		case 'INPUT':
-			if (elemento.type == 'text'){
-				let valorelemento = elemento.value;
-				if (valorelemento.length<minsize){
-					alert(false);
-					return false;
-				}
-				else{
-					alert(true);
-					return true;
-				}
+			switch (elemento.type){
+				case 'number':
+				case 'email':
+				case 'text':
+					let valorelemento = elemento.value;
+					if (valorelemento.length<minsize){
+						alert(false);
+						return false;
+					}
+					else{
+						alert(true);
+						return true;
+					}
+					break;
+				case 'file':
+					break;
+				default:
+					break;
+			
 			}
 			break;
-		case 'FILE':
+		
+		case 'SELECT':
 			break;
 		default:
 			break;

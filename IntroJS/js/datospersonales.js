@@ -1,34 +1,44 @@
+class datospersonales extends Validaciones{
 
+	constructor(){
+		super();
+	}	
 
-	function comprobar_name(){
-		let objname = new Validaciones;
-		if (objname.min_size('name',4)){
-			mostrar_exito_campo('name');
-			return true;
-		}
-		else{
+	comprobar_name(){
+		
+		if (!(this.min_size('name',4))){
 			mostrar_error_campo('name','name_min_size_KO');
 			return false;
 		}
+		if (!(this.max_size('name',8))){
+			mostrar_error_campo('name','name_max_size_KO');
+			return false;
+		}
+		mostrar_exito_campo('name');
+		return true;
 	}
 
-	function comprobar_email(){
-		let objname = new Validaciones;
-		if (objname.min_size('email',4)){
-			mostrar_exito_campo('email');
-			return true;
-		}
-		else{
+	comprobar_email(){
+		
+		if (!(this.min_size('email',4))){
 			mostrar_error_campo('email','email_min_size_KO');
 			return false;
 		}
+		if (!(this.max_size('email',20))){
+			mostrar_error_campo('email','email_max_size_KO');
+			return false;
+		}
+		mostrar_exito_campo('email');
+		return true;
 	}
 
-	function comprobar_datospersonales(){
+	comprobar_datospersonales(){
 		
-		comprobar_name();
-		comprobar_email();
+		this.comprobar_name();
+		this.comprobar_email();
 
-		return (comprobar_name() && comprobar_email());
+		return (this.comprobar_name() && this.comprobar_email());
 
 	}
+
+}
