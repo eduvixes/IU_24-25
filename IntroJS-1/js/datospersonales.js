@@ -1,15 +1,13 @@
-class datospersonales extends Validaciones{
+class datospersonales extends EntidadAbstracta{
 
 	constructor(){
 
 		super();
-
-		dom_functions = new Manejo_Dom();
 		
-		entidad = 'datospersonales';
-		columnasamostrar = array('columna1','columna2');
-		datos = ;
-		this.crearTablaDatos();
+		this.entidad = 'datospersonales';
+		this.columnasamostrar = Array('dni','fechaNacimiento_persona','direccion_persona','telefono_persona');
+		
+		this.inicializar();
 
 	}
 
@@ -59,57 +57,49 @@ class datospersonales extends Validaciones{
 
 	}
 
-	crearTablaDatos(){
-
-		dom_functions.mostrarTitulos(this.columnasamostrar);
-		dom_functions.mostrarDatos(this.entidad, this.datos)
-	
-	}
-
-
-	comprobar_name(){
+		comprobar_name(){
 		
 		if (!(this.min_size('name',4))){
-			mostrar_error_campo('name','name_min_size_KO');
+			//mostrar_error_campo('name','name_min_size_KO');
 			return false;
 		}
 		if (!(this.max_size('name',8))){
-			mostrar_error_campo('name','name_max_size_KO');
+			//mostrar_error_campo('name','name_max_size_KO');
 			return false;
 		}
 		if (!(this.format('name', '^[0-9]'))){
-			mostrar_error_campo('name','name_format_KO');
+			//mostrar_error_campo('name','name_format_KO');
 			return false;
 		}
-		mostrar_exito_campo('name');
+		//mostrar_exito_campo('name');
 		return true;
 	}
 
 	comprobar_age(){
 		
 		if (!(this.min_size('age',1))){
-			mostrar_error_campo('age','age_min_size_KO');
+			//mostrar_error_campo('age','age_min_size_KO');
 			return false;
 		}
 		if (!(this.max_size('age',3))){
-			mostrar_error_campo('age','age_max_size_KO');
+			//mostrar_error_campo('age','age_max_size_KO');
 			return false;
 		}
-		mostrar_exito_campo('age');
+		//mostrar_exito_campo('age');
 		return true;
 	}
 	
 	comprobar_email(){
 		
 		if (!(this.min_size('email',4))){
-			mostrar_error_campo('email','email_min_size_KO');
+			//mostrar_error_campo('email','email_min_size_KO');
 			return false;
 		}
 		if (!(this.max_size('email',20))){
-			mostrar_error_campo('email','email_max_size_KO');
+			//mostrar_error_campo('email','email_max_size_KO');
 			return false;
 		}
-		mostrar_exito_campo('email');
+		//mostrar_exito_campo('email');
 		return true;
 	}
 

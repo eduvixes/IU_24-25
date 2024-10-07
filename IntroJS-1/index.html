@@ -2,13 +2,16 @@
 <html>
 
 <head>
-	<style>
-		<link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
-	</style>
+	
+	<link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
+	
 
 	<script type="text/javascript" src="./js/Validaciones_Class.js"></script>
+	<script type="text/javascript" src="./js/EntidadAbstracta.js"></script>
 	<script type="text/javascript" src="./js/datospersonales.js"></script>
+	<script type="text/javascript" src="./js/usuario.js"></script>
 	<script type="text/javascript" src="./js/Manejo_Dom.js"></script>
+	<script type="text/javascript" src="./js/AccessBack_Class.js"></script>
 
 </head>
 
@@ -21,7 +24,7 @@
 	<aside id='div-menu'>
 		<ol>
 		    <li class="opcionmenu"><span onclick="validar = new datospersonales();">Datos personales</span></li>
-		    <li class="opcionmenu"><span onclick="">Otra entidad</span></li>
+		    <li class="opcionmenu"><span onclick="validar = new usuario();">Usuario</span></li>
 		    <li class="opcionmenu"><span onclick="">Otra entidad</span></li>
 	  	</ol>
 	</aside>
@@ -60,7 +63,7 @@
 				<img src="./iconos/BACK.png" onclick="DOM_class.cerrar_div_formulario();" />
 			</div>
 	
-		</div>
+	</div>
 
 
 	<!-- <article class='bordeado'>Sección article</article>-->
@@ -71,6 +74,7 @@
 
 		document.getElementById('div-menu').style.display = 'none';
 		document.getElementById('div_IU_form').style.display = 'none';
+		document.getElementById('id_tabla_datos').style.display = 'none';
 
 		function menu_work(){
 			if (document.getElementById('div-menu').style.display == 'none'){

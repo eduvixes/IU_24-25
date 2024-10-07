@@ -1,35 +1,29 @@
+class Manejo_Dom{
 
-function mostrar_error_campo(id, codigoerror){
+    constructor(){
+
+    }
+
+mostrar_error_campo(id, codigoerror){
 	document.getElementById('div_error_'+id).style.display = 'inline';
 	document.getElementById('div_error_'+id).innerHTML = codigoerror;
 	document.getElementById(id).style.borderBlockColor = 'red';
 	document.getElementById('submit_button').focus();
 }
 
-function mostrar_exito_campo(id){
+mostrar_exito_campo(id){
 	document.getElementById('div_error_'+id).style.display = 'none';
 	document.getElementById('div_error_'+id).innerHTML = '';
 	document.getElementById(id).style.borderBlockColor = 'green';
 }
 
- function mostrarTitulos(columnasamostrar){
+mostrarTitulos(columnasamostrar){
 
-
-        if (document.getElementById("titulostablacabecera")){
-
-            return document.createElement('a');
-        }
-        else{
-
-            let cabecera = document.createElement('thead');
-
-            cabecera.id = "titulostablacabecera";
-        
             let textolineatitulos = '<tr>';
         
             for (let atributo in columnasamostrar){
         
-                textolineatitulos += '<th class="'+columnasamostrar[atributo]+'"></th>';
+                textolineatitulos += '<th class="'+columnasamostrar[atributo]+'">'+columnasamostrar[atributo]+'</th>';
         
             }
         
@@ -37,22 +31,27 @@ function mostrar_exito_campo(id){
         
             textolineatitulos += '</tr>';
         
+            let cabecera = document.getElementById("titulostablacabecera");
             cabecera.innerHTML = textolineatitulos;
         
             return cabecera;
         
-        }
+}
+
+crearboton(entidad, accion, parametros){
+        let columna = document.createElement('td');
+        let opcion = document.createElement('img');
+        opcion.src = "./iconos/"+accion+'.png';
+        let textoonclick = "validar.createForm_"+accion+"("+parametros+");"
+        opcion.setAttribute('onclick',textoonclick);
+        columna.appendChild(opcion);
+        return columna.outerHTML;
     
-    }
+}
 
-    function mostrarDatos(entidad, datosfilas){
 
-        if (document.getElementById("muestradatostabla")){
-            //retornar elemento neutro a incluir en el html
-        }
-        else{
-            let cuerpo = document.getElementById('muestradatostabla');
-                   
+mostrarDatos(entidad, datosfilas, columnasamostrar){
+
             let textolineadatos = '';
         
             for (let i=0;i<datosfilas.length;i++){
@@ -71,9 +70,9 @@ function mostrar_exito_campo(id){
         
                 // crear los td para cada boton de llamada a funcion de formulario de accion (EDIT, DELETE O SHOWCURRENT)
         
-                let lineaedit = crearboton(entidad, 'EDIT', JSON.stringify(datosfilas[i]));
-                let lineadelete = crearboton(entidad, 'DELETE', JSON.stringify(datosfilas[i]));
-                let lineashowcurrent = crearboton(entidad, 'SHOWCURRENT', JSON.stringify(datosfilas[i]));
+                let lineaedit = this.crearboton(entidad, 'EDIT', JSON.stringify(datosfilas[i]));
+                let lineadelete = this.crearboton(entidad, 'DELETE', JSON.stringify(datosfilas[i]));
+                let lineashowcurrent = this.crearboton(entidad, 'SHOWCURRENT', JSON.stringify(datosfilas[i]));
         
                 textolineadatos += lineaedit+lineadelete+lineashowcurrent;
         
@@ -81,19 +80,11 @@ function mostrar_exito_campo(id){
         
             }
             
+            let cuerpo = document.getElementById('muestradatostabla');
             cuerpo.innerHTML = textolineadatos;
         
         }
     
-    }
 
-    function crearboton(entidad, accion, parametros){
-        let columna = document.createElement('td');
-        let opcion = document.createElement('img');
-        opcion.src = "./iconos/"+accion+'.png';
-        let textoonclick = "Gestion_"+entidad+".createForm_"+accion+"("+parametros+");";
-        opcion.setAttribute('onclick',textoonclick);
-        columna.appendChild(opcion);
-        return columna.outerHTML;
-    
-    }
+
+} // fin de clase
