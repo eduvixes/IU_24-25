@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		<link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
+	</style>
+
+	<script type="text/javascript" src="./js/Validaciones_Class.js"></script>
+	<script type="text/javascript" src="./js/datospersonales.js"></script>
+	<script type="text/javascript" src="./js/Manejo_Dom.js"></script>
+
+</head>
+
+<body onload="">
+
+	<header id='header_page' class='bordeado'>MIS DATOS PERSONALES</header>
+
+	<nav class='bordeado'><span onclick="menu_work();">Opciones de ménu</span></nav>
+
+	<aside id='div-menu'>
+		<ol>
+		    <li class="opcionmenu"><span onclick="validar = new datospersonales();">Datos personales</span></li>
+		    <li class="opcionmenu"><span onclick="">Otra entidad</span></li>
+		    <li class="opcionmenu"><span onclick="">Otra entidad</span></li>
+	  	</ol>
+	</aside>
+
+	<section id = "workspace" class='bordeado'>
+
+		<div id="id_tabla_datos">
+        	
+        	<div id="addysearch">
+        		<img id="botonADD" src="./iconos/ADD.png" /><img id="botonSEARCH" src="./iconos/SEARCH.png" />
+        	</div>
+    	
+        	<table id="tabladatosalumnos">
+        		<thead id="titulostablacabecera"></thead>
+        		<tbody id="muestradatostabla"></tbody>
+        	</table>
+
+        	<br>
+        	<img src="./iconos/BACK.png" onclick="" />
+
+    	</div>
+		
+	</section>
+
+	<div class = "div_IU_form" id='div_IU_form'>
+			
+			<div class = "contenidoForm" id="contenidoForm">
+				<div class = "class_titulo_form">
+					<spam class = "class_contenido_titulo_form" >titulo para el formulario de este tamano</spam>
+				</div>
+
+				<form id='IU_form' name='IU_form' method='POST' enctype="multipart/form-data" class="formulario">
+					
+				</form>
+				<br>
+				<img src="./iconos/BACK.png" onclick="DOM_class.cerrar_div_formulario();" />
+			</div>
+	
+		</div>
+
+
+	<!-- <article class='bordeado'>Sección article</article>-->
+
+	<footer class='bordeado'>Pie de página</footer>
+	
+	<script type="text/javascript">
+
+		document.getElementById('div-menu').style.display = 'none';
+		document.getElementById('div_IU_form').style.display = 'none';
+
+		function menu_work(){
+			if (document.getElementById('div-menu').style.display == 'none'){
+				document.getElementById('div-menu').style.display = 'block';
+			}
+			else{
+				document.getElementById('div-menu').style.display = 'none';
+			}
+		}
+	</script>
+
+</body>
+
+
+</html>
