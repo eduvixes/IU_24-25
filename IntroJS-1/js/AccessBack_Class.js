@@ -6,7 +6,100 @@ class AccessBack{
 
 	SEARCH(entidad){
 
-		let datospersonales = Array(
+        let funcionalidad = Array(
+		{
+            "id_funcionalidad": "1",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "2",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "3",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "4",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "5",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "6",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "7",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "545",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "623",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "642",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "648",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "650",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "697",
+            "nombre_funcionalidad": "nombre_funcionalidad",
+            "descrip_funcionalidad": "descrip_funcionalidad"
+        },
+        {
+            "id_funcionalidad": "721",
+            "nombre_funcionalidad": "eva",
+            "descrip_funcionalidad": "holaquease"
+        },
+        {
+            "id_funcionalidad": "724",
+            "nombre_funcionalidad": "prueba1212",
+            "descrip_funcionalidad": "prueba"
+        },
+        {
+            "id_funcionalidad": "725",
+            "nombre_funcionalidad": "prueba12",
+            "descrip_funcionalidad": "prueba12"
+        },
+        {
+            "id_funcionalidad": "731",
+            "nombre_funcionalidad": "qwerterty",
+            "descrip_funcionalidad": "qwerggggggggggggggggggggggggggggggggggggggggggggggg"
+        },
+        {
+            "id_funcionalidad": "734",
+            "nombre_funcionalidad": "el",
+            "descrip_funcionalidad": "sshhshhs"
+        }
+        );
+
+        let datospersonales = Array(
         {
             "dni": "11111111H",
             "nombre_persona": "aaasdasdasdasdasdas",
@@ -124,6 +217,995 @@ class AccessBack{
             "dni": "11111111H",
             "usuario": "root",
             "contrasena": "63a9f0ea7bb98050796b649e85481845",
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        }
+        );
+
+        rolaccionfuncionalidad = Array(
+            {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "1",
+                "rol_name": "Básico",
+                "rol_description": "Usuario Básico"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "3",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "4",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "5",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "1",
+                "rol_name": "Básico",
+                "rol_description": "Usuario Básico"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "1",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "7",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "2",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "2",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "2",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "3",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "2",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "4",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "2",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "5",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "2",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "2",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "7",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "3",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "3",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "3",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "3",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "3",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "4",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "3",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "5",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "3",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "3",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "7",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "4",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "4",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "4",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "3",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "4",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "4",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "4",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "5",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "4",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "4",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "7",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "5",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "5",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "5",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "3",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "5",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "4",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "5",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "5",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "5",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "5",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "7",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "6",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "6",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "6",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "3",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "6",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "4",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "6",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "5",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "6",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "6",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "7",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "7",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "7",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "7",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "3",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "7",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "4",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "7",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "5",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "7",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "7",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "7",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "545",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "648",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "1",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "648",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "2",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "648",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "3",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "648",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "4",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "648",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "5",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
+            "id_rol": {
+                "id_rol": "0",
+                "rol_name": "Admin",
+                "rol_description": "Administrador"
+            }
+        },
+        {
+            "id_funcionalidad": {
+                "id_funcionalidad": "648",
+                "nombre_funcionalidad": "nombre_funcionalidad",
+                "descrip_funcionalidad": "descrip_funcionalidad"
+            },
+            "id_accion": {
+                "id_accion": "6",
+                "nombre_accion": "nombre_accion",
+                "descrip_accion": "descrip_accion"
+            },
             "id_rol": {
                 "id_rol": "0",
                 "rol_name": "Admin",

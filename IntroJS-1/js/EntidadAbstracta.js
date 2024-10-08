@@ -1,12 +1,12 @@
-class EntidadAbstracta{
+class EntidadAbstracta extends Manejo_Dom{
 
 	constructor(){
-
+		super();
 	}
 
 	inicializar(){
 
-		this.dom_functions = new Manejo_Dom();
+		//this.dom_functions = new Manejo_Dom();
 		this.access_functions = new AccessBack();
 		this.validaciones = new Validaciones();
 		
@@ -18,8 +18,8 @@ class EntidadAbstracta{
 	crearTablaDatos(){
 
 		document.getElementById("id_tabla_datos").style.display = 'block';
-		this.dom_functions.mostrarTitulos(this.columnasamostrar);
-		this.dom_functions.mostrarDatos(this.entidad, this.datos, this.columnasamostrar);
+		this.mostrarTitulos(this.columnasamostrar);
+		this.mostrarDatos(this.entidad, this.datos, this.columnasamostrar);
 	
 	}
 

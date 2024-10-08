@@ -6,8 +6,17 @@ class usuario extends EntidadAbstracta{
 
 		this.entidad = 'usuario';
 		this.columnasamostrar = Array('dni','usuario','id_rol');
+		this.datosespecialestabla = Array('id_rol');
 
 		this.inicializar();
+
+	}
+
+	cambiardatosespecialestabla(atributo, valoratributo){
+
+		if (atributo == 'id_rol'){
+			return valoratributo.rol_name;
+		}
 
 	}
 

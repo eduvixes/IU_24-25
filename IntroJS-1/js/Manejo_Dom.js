@@ -63,7 +63,13 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
         
                     if (columnasamostrar.includes(clave)){
         
-                        textolineadatos += '<td>'+datosfilas[i][clave]+'</td>';
+                        if (this.datosespecialestabla.includes(clave)){
+                            let valorcolumna = this.cambiardatosespecialestabla(clave,datosfilas[i][clave]);
+                            textolineadatos += '<td>'+valorcolumna+'</td>';
+                        }
+                        else{
+                            textolineadatos += '<td>'+datosfilas[i][clave]+'</td>';
+                        }
         
                     }
                 }
