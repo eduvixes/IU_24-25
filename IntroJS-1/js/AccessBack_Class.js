@@ -4,9 +4,9 @@ class AccessBack{
 
 	}
 
-	SEARCH(){
+	SEARCH(entidad){
 
-		/*let datos = Array(
+		let datospersonales = Array(
         {
             "dni": "11111111H",
             "nombre_persona": "aaasdasdasdasdasdas",
@@ -27,9 +27,9 @@ class AccessBack{
             "email_persona": "11111",
             "foto_persona": "edit_accion.jpg"
         }
-        );*/
+        );
 
-        let datos = Array(
+        let usuario = Array(
          {
             "dni": "35581292Q",
             "usuario": "RBL",
@@ -132,7 +132,7 @@ class AccessBack{
         }
         );
 
-		return datos;
+		return eval(entidad);
 
 	}
 

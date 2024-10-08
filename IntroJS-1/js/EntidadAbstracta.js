@@ -10,7 +10,7 @@ class EntidadAbstracta{
 		this.access_functions = new AccessBack();
 		this.validaciones = new Validaciones();
 		
-		this.datos = this.access_functions.SEARCH();
+		this.datos = this.access_functions.SEARCH(this.entidad);
 
 		this.crearTablaDatos();
 	}
@@ -21,6 +21,10 @@ class EntidadAbstracta{
 		this.dom_functions.mostrarTitulos(this.columnasamostrar);
 		this.dom_functions.mostrarDatos(this.entidad, this.datos, this.columnasamostrar);
 	
+	}
+
+	createForm_EDIT(parametros){
+		console.log(parametros);
 	}
 
 }
