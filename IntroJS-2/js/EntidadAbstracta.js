@@ -27,6 +27,22 @@ class EntidadAbstracta extends Manejo_Dom{
 	
 	}
 
+	cargar_formulario(){
+
+		if (eval(this.cargar_formulario_html())){
+			this.cargar_formulario_html();
+		}
+		else{
+			if (eval(this.cargar_formulario_dinamico())){
+				this.cargar_formulario_dinamico();
+			}
+			else{
+				alert('no existe formulario');
+			}
+		}
+
+	}
+
 	cargar_formulario_html(){
 		return false;
 	}
@@ -41,14 +57,7 @@ class EntidadAbstracta extends Manejo_Dom{
 
 	createForm_EDIT(parametros){
 		
-		if (eval(this.cargar_formulario_html())){
-			this.cargar_formulario_html();
-		}
-		else{
-			if (eval(this.cargar_formulario_dinamico())){
-				this.cargar_formulario_dinamico();
-			}
-		}
+		this.cargar_formulario();
 		
 		if (eval(this.cargar_parametros_dinamico())){
 			this.cargar_parametros_dinamico();

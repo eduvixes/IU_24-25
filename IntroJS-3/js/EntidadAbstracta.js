@@ -48,6 +48,9 @@ class EntidadAbstracta extends Manejo_Dom{
 			if (eval(this.cargar_formulario_dinamico())){
 				this.cargar_formulario_dinamico();
 			}
+			else{
+				alert('no existe formulario');
+			}
 		}
 		
 		if (eval(this.cargar_parametros_dinamico())){
