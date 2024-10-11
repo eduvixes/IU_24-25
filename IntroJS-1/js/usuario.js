@@ -21,7 +21,7 @@ class usuario extends EntidadAbstracta{
 	}
 
 	createForm_EDIT(parametros){
-		console.log(parametros);
+		alert(parametros);
 	}
 
 } //fin de clase

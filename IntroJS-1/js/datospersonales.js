@@ -15,8 +15,6 @@ class datospersonales extends EntidadAbstracta{
 		
 		let formulario = `
 
-		<form action="http://193.147.87.202/procesaform.php" method="POST" enctype="multipart/form-data" onsubmit="return validar.comprobar_datospersonales();">
-
 			<label for="name">Name:</label>
 			<input type="TEXT" id="name" name="name-enviado-por-javi" onblur="validar.comprobar_name();"><span id="div_error_name"></span>
 			<br>
@@ -50,60 +48,62 @@ class datospersonales extends EntidadAbstracta{
 
 			<input id="submit_button" type="submit" value="Submit">
 
-		</form>
-
 
 		`;
+
+		document.getElementById("IU_form").setAttribute('onsubmit',"return validar.comprobar_submit();")
+		document.getElementById("IU_form").innerHTML = formulario;
+		document.getElementById("div_IU_form").style.display = 'block';
 
 	}
 
 		comprobar_name(){
 		
-		if (!(this.min_size('name',4))){
-			//mostrar_error_campo('name','name_min_size_KO');
+		if (!(this.validaciones.min_size('name',4))){
+			this.mostrar_error_campo('name','name_min_size_KO');
 			return false;
 		}
-		if (!(this.max_size('name',8))){
-			//mostrar_error_campo('name','name_max_size_KO');
+		if (!(this.validaciones.max_size('name',8))){
+			this.mostrar_error_campo('name','name_max_size_KO');
 			return false;
 		}
-		if (!(this.format('name', '^[0-9]'))){
-			//mostrar_error_campo('name','name_format_KO');
+		if (!(this.validaciones.format('name', '^[0-9]'))){
+			this.mostrar_error_campo('name','name_format_KO');
 			return false;
 		}
-		//mostrar_exito_campo('name');
+		this.mostrar_exito_campo('name');
 		return true;
 	}
 
 	comprobar_age(){
 		
-		if (!(this.min_size('age',1))){
-			//mostrar_error_campo('age','age_min_size_KO');
+		if (!(this.validaciones.min_size('age',1))){
+			this.mostrar_error_campo('age','age_min_size_KO');
 			return false;
 		}
-		if (!(this.max_size('age',3))){
-			//mostrar_error_campo('age','age_max_size_KO');
+		if (!(this.validaciones.max_size('age',3))){
+			this.mostrar_error_campo('age','age_max_size_KO');
 			return false;
 		}
-		//mostrar_exito_campo('age');
+		this.mostrar_exito_campo('age');
 		return true;
 	}
 	
 	comprobar_email(){
 		
-		if (!(this.min_size('email',4))){
-			//mostrar_error_campo('email','email_min_size_KO');
+		if (!(this.validaciones.min_size('email',4))){
+			this.mostrar_error_campo('email','email_min_size_KO');
 			return false;
 		}
-		if (!(this.max_size('email',20))){
-			//mostrar_error_campo('email','email_max_size_KO');
+		if (!(this.validaciones.max_size('email',20))){
+			this.mostrar_error_campo('email','email_max_size_KO');
 			return false;
 		}
-		//mostrar_exito_campo('email');
+		this.mostrar_exito_campo('email');
 		return true;
 	}
 
-	comprobar_datospersonales(){
+	comprobar_submit(){
 		
 		/*this.comprobar_name();
 		this.comprobar_age();

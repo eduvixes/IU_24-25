@@ -6,6 +6,10 @@ class EntidadAbstracta extends Manejo_Dom{
 
 	inicializar(){
 
+		if (eval(this.datosespecialestabla)){}
+		else{
+			this.datosespecialestabla = Array();
+		}
 		//this.dom_functions = new Manejo_Dom();
 		this.access_functions = new AccessBack();
 		this.validaciones = new Validaciones();
@@ -23,8 +27,36 @@ class EntidadAbstracta extends Manejo_Dom{
 	
 	}
 
+	cargar_formulario_dinamico(){
+		return false;
+	}
+
+	cargar_parametros_dinamico(){
+		return false;
+	}
+
 	createForm_EDIT(parametros){
-		console.log(parametros);
+		
+		if (eval(this.cargar_formulario_html())){
+			this.cargar_formulario_html();
+		}
+		else{
+			if (eval(this.cargar_formulario_dinamico())){
+				this.cargar_formulario_dinamico();
+			}
+		}
+		
+		if (eval(this.cargar_parametros_dinamico())){
+			this.cargar_parametros_dinamico();
+		}
+
+	}
+
+	createForm_ADD(){
+		if (eval(this.cargar_formulario_html())){
+			this.cargar_formulario_html();
+		}
+		
 	}
 
 }
