@@ -9,11 +9,15 @@
 	<script type="text/javascript" src="./js/Validaciones_Class.js"></script>
 	<script type="text/javascript" src="./js/Manejo_Dom.js"></script>
 	<script type="text/javascript" src="./js/EntidadAbstracta.js"></script>
-	<script type="text/javascript" src="./js/datospersonales.js"></script>
-	<script type="text/javascript" src="./js/usuario.js"></script>
+
+
 	<script type="text/javascript" src="./js/funcionalidad.js"></script>
-	<script type="text/javascript" src="./js/rolaccionfuncionalidad.js"></script>
+	<script type="text/javascript" src="./js/analysis_preparation.js"></script>
+
 	<script type="text/javascript" src="./js/AccessBack_Class.js"></script>
+
+	<!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 
@@ -25,10 +29,8 @@
 
 	<aside id='div-menu'>
 		<ol>
-		    <li class="opcionmenu"><span onclick="validar = new datospersonales();">Datos personales</span></li>
-		    <li class="opcionmenu"><span onclick="validar = new usuario();">Usuario</span></li>
+		    <li class="opcionmenu"><span onclick="validar = new analysis_preparation">Preparación Análisis</span></li>
 		    <li class="opcionmenu"><span onclick="validar = new funcionalidad();">Funcionalidad</span></li>
-		    <li class="opcionmenu"><span onclick="validar = new rolaccionfuncionalidad();">Permisos</span></li>
 	  	</ol>
 	</aside>
 
@@ -37,7 +39,7 @@
 		<div id="id_tabla_datos">
         	
         	<div id="addysearch">
-        		<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm_ADD();" /><img id="botonSEARCH" src="./iconos/SEARCH.png" />
+        		<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm_ADD();" /><img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm_SEARCH();"/>
         	</div>
     	
         	<table id="tabladatosalumnos">

@@ -10,13 +10,13 @@ class EntidadAbstracta extends Manejo_Dom{
 		else{
 			this.datosespecialestabla = Array();
 		}
-		//this.dom_functions = new Manejo_Dom();
+
 		this.access_functions = new AccessBack();
 		this.validaciones = new Validaciones();
 		
-		this.datos = this.access_functions.SEARCH(this.entidad);
+		this.SEARCH();
 
-		this.crearTablaDatos();
+
 	}
 
 	crearTablaDatos(){
@@ -71,5 +71,30 @@ class EntidadAbstracta extends Manejo_Dom{
 		}
 		
 	}
+
+
+	async SEARCH(){
+    
+        await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH')
+        .then((respuesta) => {
+            
+            //limpiar el formulario
+
+            //poner el div del formulario no visible
+            document.getElementById("div_IU_form").style.display = 'none';
+
+            this.datos = respuesta['resource'];
+
+            this.crearTablaDatos();
+            
+            if (respuesta['code'] == 'RECORDSET_VACIO'){
+                document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
+            }
+
+        });
+    
+    }
+
+	
 
 }
