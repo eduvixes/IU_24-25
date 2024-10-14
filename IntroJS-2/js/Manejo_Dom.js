@@ -91,6 +91,14 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
         
         }
     
+    cerrar_formulario(){
+
+        document.getElementById("IU_form").innerHTML = '';
+        document.getElementById("IU_form").setAttribute('onsubmit',"");
+        document.getElementById("IU_form").setAttribute('action',"");
+        document.getElementById("div_IU_form").style.display = 'none';
+
+    }
 
 
 } // fin de clase
