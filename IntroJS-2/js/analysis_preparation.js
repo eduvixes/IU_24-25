@@ -39,7 +39,7 @@ class analysis_preparation extends EntidadAbstracta{
 			<fieldset>
 	        <label id="label_file_analysis_preparation" class="label_foto_persona">file_analysis_preparation</label>
 	        <input type='text' id='file_analysis_preparation' name='file_analysis_preparation'></input>
-	        <a id="link_file_analysis_preparation" href="http://193.147.87.202/ET2/filesuploaded/files_file_analysis_preparation/"><img src="./iconos/FILE.png" /></a>
+	        <a id="link_file_analysis_preparation" href="http://193.147.87.202/ET2/filesuploaded/files_file_analysis_preparation/"><img id="img_file" src="./iconos/FILE.png"/></a>
 	        <label id="label_nuevo_file_analysis_preparation" class="label_nuevo_file_analysis_preparation">Nueva file_analysis_preparation</label>
 	        <input type='file' id='nuevo_file_analysis_preparation' name='nuevo_file_analysis_preparation'></input>
 	        <div id="div_error_file_analysis_preparation" class="errorcampo"><a id="error_nuevo_file_analysis_preparation"></a></div>
@@ -78,6 +78,7 @@ class analysis_preparation extends EntidadAbstracta{
 		document.getElementById("nuevo_file_analysis_preparation").style.display = "none";
 		//eliminar el img de enlace de fichero
 		document.getElementById("link_file_analysis_preparation").style.display = "none";
+		document.getElementById("img_file").style.display = "none";
 
 		let botonsearch = document.createElement('button');
 	    botonsearch.type = 'submit';
@@ -85,6 +86,43 @@ class analysis_preparation extends EntidadAbstracta{
 	    imgsearch.src = './iconos/SEARCH.png';
 	    botonsearch.append(imgsearch);
 	    document.getElementById('IU_form').append(botonsearch);
+
+
+	    document.getElementById("IU_form").setAttribute('onsubmit',"return validar.comprobar_submit_SEARCH();");
+		document.getElementById("IU_form").setAttribute('action',"javascript:validar.SEARCH();");
+		document.getElementById("div_IU_form").style.display = 'block';
+
+	}
+
+
+createForm_ADD(){
+
+		if (eval(this.cargar_formulario_html())){
+			this.cargar_formulario_html();
+		}
+
+		//tratar validaciones
+		document.getElementById("id_analysis_preparation").setAttribute("onblur","validar.comprobar_id_analysis_preparation();");
+		document.getElementById("id_analysis_preparation").setAttribute("onblur","validar.comprobar_name_analysis_preparation_();");
+		document.getElementById("id_analysis_preparation").setAttribute("onblur","validar.comprobar_description_analysis_preparation();");
+		document.getElementById("id_analysis_preparation").setAttribute("onblur","validar.comprobar_bib_analysis_preparation();");
+		document.getElementById("id_analysis_preparation").setAttribute("onblur","validar.comprobar_file_analysis_preparation;");
+
+		//tratar ficheros
+		//eliminar el label de nuevo fichero
+		document.getElementById("label_nuevo_file_analysis_preparation").style.display = "none";
+		//eliminar el input de nuevo fichero
+		document.getElementById("nuevo_file_analysis_preparation").style.display = "none";
+		//eliminar el img de enlace de fichero
+		document.getElementById("link_file_analysis_preparation").style.display = "none";
+		document.getElementById("img_file").style.display = "none";
+
+		let boton = document.createElement('button');
+	    boton.type = 'submit';
+	    let imgsearch = document.createElement('img');
+	    imgsearch.src = './iconos/ADD.png';
+	    boton.append(imgsearch);
+	    document.getElementById('IU_form').append(boton);
 
 
 	    document.getElementById("IU_form").setAttribute('onsubmit',"return validar.comprobar_submit_SEARCH();");

@@ -85,9 +85,10 @@ class EntidadAbstracta extends Manejo_Dom{
 
             this.datos = respuesta['resource'];
 
-            this.crearTablaDatos();
-            
-            if (respuesta['code'] == 'RECORDSET_VACIO'){
+            if (respuesta['code'] == 'RECORDSET_DATOS'){
+            	this.crearTablaDatos();
+            }
+            else{
                 document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
             }
 
