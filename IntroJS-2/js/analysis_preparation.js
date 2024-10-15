@@ -40,10 +40,10 @@ class analysis_preparation extends EntidadAbstracta{
 
 			<fieldset>
 	        <label id="label_file_analysis_preparation" class="label_foto_persona">file_analysis_preparation</label>
-	        <input type='text' id='file_analysis_preparation' name='file_analysis_preparation'></input>
+	        <input type='text' id='file_analysis_preparation' name='file_analysis_preparation'>
 	        <a href="http://193.147.87.202/ET2/filesuploaded/files_file_analysis_preparation/" id="link_file_analysis_preparation" ><img id="img_file_analysis_preparation" src="./iconos/FILE.png"></img></a>
 	        <label id="label_nuevo_file_analysis_preparation" class="label_nuevo_file_analysis_preparation">nuevo_file_analysis_preparation file_analysis_preparation</label>
-	        <input type='file' id='nuevo_file_analysis_preparation' name='nuevo_file_analysis_preparation'></input>
+	        <input type='file' id='nuevo_file_analysis_preparation' name='nuevo_file_analysis_preparation'>
 	        <div id="div_error_file_analysis_preparation" class="errorcampo"><a id="error_nuevo_file_analysis_preparation"></a></div>
 	        </fieldset>
 

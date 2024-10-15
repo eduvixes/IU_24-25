@@ -15,17 +15,17 @@ class funcionalidad extends EntidadAbstracta{
 
 		let formulario = `
 
-			<label id="label_id_funcionalidad">id_funcionalidad<label>
+			<label id="label_id_funcionalidad">id_funcionalidad</label>
 			<input type="text" id="id_funcionalidad" name="id_funcionalidad" />
 			<spam id="div_error_id_funcionalidad"></span>
 			<br>
 
-			<label id="label_nombre_funcionalidad">nombre_funcionalidad<label>
+			<label id="label_nombre_funcionalidad">nombre_funcionalidad</label>
 			<input type="text" id="nombre_funcionalidad" name="nombre_funcionalidad" />
 			<spam id="div_error_nombre_funcionalidad"></span>
 			<br>
 
-			<label id="label_descrip_funcionalidad">descrip_funcionalidad<label>
+			<label id="label_descrip_funcionalidad">descrip_funcionalidad</label>
 			<input type="text" id="descrip_funcionalidad" name="descrip_funcionalidad" />
 			<spam id="div_error_descrip_funcionalidad"></span>
 			<br>
@@ -45,11 +45,14 @@ class funcionalidad extends EntidadAbstracta{
 			this.cargar_formulario_html();
 		}
 
+
 		//tratar validaciones
-		document.getElementById("id_funcionalidad").setAttribute("onblur","validar.comprobar_id__funcionalidad();");
+		//document.getElementById("id_funcionalidad").setAttribute("onblur","validar.comprobar_id__funcionalidad();");
 		document.getElementById("nombre_funcionalidad").setAttribute("onblur","validar.comprobar_nombre_funcionalidad();");
 		document.getElementById("descrip_funcionalidad").setAttribute("onblur","validar.comprobar_descrip_funcionalidad();");
 		
+		document.getElementById('label_id_funcionalidad').style.display = "none";
+		document.getElementById('id_funcionalidad').style.display = "none";
 
 		let boton = document.createElement('button');
 	    boton.type = 'submit';
@@ -162,6 +165,7 @@ class funcionalidad extends EntidadAbstracta{
 
 		//rellenar los datos
 		document.getElementById('id_funcionalidad').value = valoresfila.id_funcionalidad;
+		document.getElementById('id_funcionalidad').setAttribute("readonly",true);
 		document.getElementById('nombre_funcionalidad').value = valoresfila.nombre_funcionalidad;
 		document.getElementById('descrip_funcionalidad').value = valoresfila.descrip_funcionalidad;        
 
