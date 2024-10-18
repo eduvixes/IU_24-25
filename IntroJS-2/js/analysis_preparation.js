@@ -51,7 +51,7 @@ class analysis_preparation extends EntidadAbstracta{
 		`;
 
 		document.getElementById("IU_form").innerHTML = formulario;
-		return true;
+		//return true;
 
 	}
 
@@ -69,12 +69,14 @@ class analysis_preparation extends EntidadAbstracta{
 
 	createForm_SEARCH(){
 
-		alert("llego");
-
-		if (eval(this.cargar_formulario_html())){
+		if (undefined !== this.cargar_formulario_html){
 			this.cargar_formulario_html();
 		}
-
+/*
+		if (eval(this.cargar_formulario_html)){
+			this.cargar_formulario_html();
+		}
+*/
 		//tratar validaciones
 		document.getElementById("id_analysis_preparation").setAttribute("onblur","validar.comprobar_id_analysis_preparation_SEARCH();");
 		document.getElementById("id_analysis_preparation").setAttribute("onblur","validar.comprobar_name_analysis_preparation_SEARCH();");
@@ -148,6 +150,10 @@ createForm_ADD(){
 
 		if (atributo == 'file_analysis_preparation'){
 
+
+			if (valoratributo == ''){
+				return "no hay fichero";
+			}
 			let texto = valoratributo; 
 			texto += `<a id="link_file_analysis_preparation" href="http://193.147.87.202/ET2/filesuploaded/files_file_analysis_preparation/`;
 			texto += valoratributo;
@@ -156,6 +162,10 @@ createForm_ADD(){
 			return texto;
 		}
 
+	}
+
+	comprobar_submit(){
+		return true;
 	}
 
 
