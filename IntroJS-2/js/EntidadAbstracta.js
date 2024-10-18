@@ -29,11 +29,11 @@ class EntidadAbstracta extends Manejo_Dom{
 
 	cargar_formulario(){
 
-		if (eval(this.cargar_formulario_html())){
+		if (eval(this.cargar_formulario_html)){
 			this.cargar_formulario_html();
 		}
 		else{
-			if (eval(this.cargar_formulario_dinamico())){
+			if (eval(this.cargar_formulario_dinamico)){
 				this.cargar_formulario_dinamico();
 			}
 			else{
@@ -43,6 +43,7 @@ class EntidadAbstracta extends Manejo_Dom{
 
 	}
 
+	/*
 	cargar_formulario_html(){
 		return false;
 	}
@@ -51,14 +52,14 @@ class EntidadAbstracta extends Manejo_Dom{
 		return false;
 	}
 
-
+*/
 	async SEARCH(){
     
         await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH')
         .then((respuesta) => {
             
             //limpiar el formulario
-        	this.cargar_formulario();
+        	this.cargar_formulario_html();
 
             //poner el div del formulario no visible
             document.getElementById("div_IU_form").style.display = 'none';

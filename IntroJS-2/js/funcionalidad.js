@@ -35,8 +35,6 @@ class funcionalidad extends EntidadAbstracta{
 
 		document.getElementById("IU_form").innerHTML = formulario;
 
-		return true;
-
 	}
 
 	createForm_ADD(){
@@ -47,7 +45,7 @@ class funcionalidad extends EntidadAbstracta{
 
 
 		//tratar validaciones
-		//document.getElementById("id_funcionalidad").setAttribute("onblur","validar.comprobar_id__funcionalidad();");
+		//document.getElementById("id_funcionalidad").setAttribute("onblur","validar.comprobar_id_funcionalidad();");
 		document.getElementById("nombre_funcionalidad").setAttribute("onblur","validar.comprobar_nombre_funcionalidad();");
 		document.getElementById("descrip_funcionalidad").setAttribute("onblur","validar.comprobar_descrip_funcionalidad();");
 		
