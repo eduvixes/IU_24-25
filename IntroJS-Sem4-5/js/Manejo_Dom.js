@@ -57,11 +57,10 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
             for (let i=0;i<datosfilas.length;i++){
         
                 textolineadatos += '<tr style="background-color:grey;">';
+          
+                for (let j=0;j<columnasamostrar.length;j++){
     
-        
-                for (let clave in datosfilas[i]){
-        
-                    if (columnasamostrar.includes(clave)){
+                    let clave = columnasamostrar[j];
         
                         if (this.datosespecialestabla.includes(clave)){
                             let valorcolumna = this.cambiardatosespecialestabla(clave,datosfilas[i][clave]);
@@ -71,7 +70,6 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
                             textolineadatos += '<td>'+datosfilas[i][clave]+'</td>';
                         }
         
-                    }
                 }
         
                 // crear los td para cada boton de llamada a funcion de formulario de accion (EDIT, DELETE O SHOWCURRENT)

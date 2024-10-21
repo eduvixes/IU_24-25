@@ -70,6 +70,8 @@ class EntidadAbstracta extends DOM_class{
             	this.crearTablaDatos();
             }
             else{
+				document.getElementById("id_tabla_datos").style.display = 'block';
+				this.mostrarTitulos(this.columnasamostrar);
                 document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
             }
 

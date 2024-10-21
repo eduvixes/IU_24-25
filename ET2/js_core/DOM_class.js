@@ -58,10 +58,9 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
         
                 textolineadatos += '<tr style="background-color:grey;">';
     
-        
-                for (let clave in datosfilas[i]){
-        
-                    if (columnasamostrar.includes(clave)){
+                for (let j=0;j<columnasamostrar.length;j++){
+    
+                    let clave = columnasamostrar[j];
         
                         if (this.datosespecialestabla.includes(clave)){
                             let valorcolumna = this.cambiardatosespecialestabla(clave,datosfilas[i][clave]);
@@ -71,7 +70,6 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
                             textolineadatos += '<td>'+datosfilas[i][clave]+'</td>';
                         }
         
-                    }
                 }
         
                 // crear los td para cada boton de llamada a funcion de formulario de accion (EDIT, DELETE O SHOWCURRENT)
@@ -97,6 +95,14 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
         document.getElementById("IU_form").setAttribute('onsubmit',"");
         document.getElementById("IU_form").setAttribute('action',"");
         document.getElementById("div_IU_form").style.display = 'none';
+
+    }
+
+    cerrar_tabla(){
+
+        document.getElementById("titulostablacabecera").innerHTML = '';
+        document.getElementById("muestradatostabla").innerHTML = '';
+        document.getElementById("id_tabla_datos").style.display = 'none';
 
     }
 

@@ -75,7 +75,9 @@ class validacionesatomicas{
 	}
 
 	format(id, exprreg){
-		return true;
+		let expresionregular = new RegExp(exprreg);
+		let valor = document.getElementById(id).value;
+		return expresionregular.test(valor);
 	}
 
 }

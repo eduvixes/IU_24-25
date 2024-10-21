@@ -13,7 +13,7 @@
 
 	<script type="text/javascript" src="./js_app/Validaciones_Atomicas.js"></script>
 	<script type="text/javascript" src="./js_app/funcionalidad.js"></script>
-	<script type="text/javascript" src="./js_app/datospersonales.js"></script>
+	<script type="text/javascript" src="./js_app/persona.js"></script>
 
 	<!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -33,7 +33,7 @@
 
 	<aside id='div-menu'>
 		<ol>
-		    <li class="opcionmenu"><span onclick="validar = new analysis_preparation();">Preparación Análisis</span></li>
+		    <li class="opcionmenu"><span onclick="validar = new persona();">Datos Personales</span></li>
 		    <li class="opcionmenu"><span onclick="validar = new funcionalidad();">Funcionalidad</span></li>
 	  	</ol>
 	</aside>
@@ -54,7 +54,7 @@
         	</table>
 
         	<br>
-        	<img src="./iconos/BACK.png" onclick="" />
+        	<img src="./iconos/BACK.png" onclick="validar.cerrar_tabla();" />
 
     	</div>
 		
