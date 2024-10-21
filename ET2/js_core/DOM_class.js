@@ -7,14 +7,16 @@ class DOM_class{
 mostrar_error_campo(id, codigoerror){
 	document.getElementById('div_error_'+id).style.display = 'inline';
 	document.getElementById('div_error_'+id).innerHTML = codigoerror;
-	document.getElementById(id).style.borderBlockColor = 'red';
+	//document.getElementById(id).style.borderBlockColor = 'red';
+    document.getElementById(id).className = 'errorcampo';
 	document.getElementById('submit_button').focus();
 }
 
 mostrar_exito_campo(id){
 	document.getElementById('div_error_'+id).style.display = 'none';
 	document.getElementById('div_error_'+id).innerHTML = '';
-	document.getElementById(id).style.borderBlockColor = 'green';
+	//document.getElementById(id).style.borderBlockColor = 'green';
+    document.getElementById(id).className = 'exitocampo';
 }
 
 mostrarTitulos(columnasamostrar){

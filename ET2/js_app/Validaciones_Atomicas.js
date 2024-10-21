@@ -80,4 +80,17 @@ class validacionesatomicas{
 		return expresionregular.test(valor);
 	}
 
+	max_size_file(objfile, minsize){
+		alert(objfile.size);
+		return false;
+	}
+
+	type_file(objfile, array_tipos){
+		alert(objfile.type);
+	}
+
+	format_name_file(objfile, exprreg){
+		alert(objfile.name);
+	}
+
 }

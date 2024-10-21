@@ -69,3 +69,13 @@ General
 
     font-weight: bold;
 }
+
+.errorcampo {
+  border: 1px solid red;
+  display: inline-block;
+}
+
+.exitocampo {
+  border: 1px green;
+  display: inline-block;
+}
