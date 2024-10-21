@@ -10,7 +10,6 @@ class rolaccionfuncionalidad extends EntidadAbstracta{
 
 		this.inicializar();
 
-
 	}
 
 	cambiardatosespecialestabla(atributo, valoratributo){

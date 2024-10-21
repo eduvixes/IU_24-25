@@ -57,11 +57,12 @@ class datospersonales extends EntidadAbstracta{
 
 	}
 
-		comprobar_name(){
+	comprobar_name(){
 		
 		if (!(this.validaciones.min_size('name',4))){
 			this.mostrar_error_campo('name','name_min_size_KO');
-			return false;
+			//return false;
+			return 'name_min_size_KO';
 		}
 		if (!(this.validaciones.max_size('name',8))){
 			this.mostrar_error_campo('name','name_max_size_KO');

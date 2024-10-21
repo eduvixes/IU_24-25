@@ -15,6 +15,21 @@ General
 }
 
 /*
+
+tabla muestra datos
+
+*/
+
+#workspace{
+    height: 30%;
+}
+
+.contenidoTabla{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+/*
  
  formulario
 
