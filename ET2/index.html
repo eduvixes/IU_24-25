@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
+	
+
+	<script type="text/javascript" src="./js_core/ExternalAccess.js"></script>
+	
+	<script type="text/javascript" src="./js_core/DOM_class.js"></script>
+	<script type="text/javascript" src="./js_base/EntidadAbstracta.js"></script>
+
+	<script type="text/javascript" src="./js_app/Validaciones_Atomicas.js"></script>
+	<script type="text/javascript" src="./js_app/funcionalidad.js"></script>
+	<script type="text/javascript" src="./js_app/datospersonales.js"></script>
+
+	<!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body onload="">
+
+	<header id='header_page' class='bordeado'><spam class="titulo_app">MIS DATOS PERSONALES<spam>
+		<select id="idioma">
+        			<option value='ES'>ES</option>
+        			<option value='EN'>EN</option>
+        </select>
+	</header>
+
+	<nav class='bordeado'><span onclick="menu_work();">Opciones de ménu</span></nav>
+
+	<aside id='div-menu'>
+		<ol>
+		    <li class="opcionmenu"><span onclick="validar = new analysis_preparation();">Preparación Análisis</span></li>
+		    <li class="opcionmenu"><span onclick="validar = new funcionalidad();">Funcionalidad</span></li>
+	  	</ol>
+	</aside>
+
+	<section id = "workspace" class='bordeado'>
+
+		<div id="id_tabla_datos">
+        	
+        	<div id="addysearch">
+        		<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm_ADD();" />
+        		<img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm_SEARCH();"/>
+        		<img id="botonTEST" src="./iconos/TEST.png" onclick=""/>
+        	</div>
+    	
+        	<table id="tabladatosalumnos">
+        		<thead id="titulostablacabecera"></thead>
+        		<tbody id="muestradatostabla"></tbody>
+        	</table>
+
+        	<br>
+        	<img src="./iconos/BACK.png" onclick="" />
+
+    	</div>
+		
+	</section>
+
+	<div class = "div_IU_form" id='div_IU_form'>
+			
+			<div class = "contenidoForm" id="contenidoForm">
+				<div class = "class_titulo_form">
+					<spam id="class_contenido_titulo_form" class = "class_contenido_titulo_form" >titulo para el formulario de este tamano</spam>
+				</div>
+
+				<form id='IU_form' name='IU_form' method='POST' enctype="multipart/form-data" class="formulario">
+					
+				</form>
+				<br>
+				<img src="./iconos/BACK.png" onclick="validar.cerrar_formulario();" />
+			</div>
+	
+	</div>
+
+
+	<!-- <article class='bordeado'>Sección article</article>-->
+
+	<footer class='bordeado'>Pie de página</footer>
+	
+	<script type="text/javascript">
+
+		document.getElementById('div-menu').style.display = 'none';
+		document.getElementById('div_IU_form').style.display = 'none';
+		document.getElementById('id_tabla_datos').style.display = 'none';
+
+		function menu_work(){
+			if (document.getElementById('div-menu').style.display == 'none'){
+				document.getElementById('div-menu').style.display = 'block';
+			}
+			else{
+				document.getElementById('div-menu').style.display = 'none';
+			}
+		}
+	</script>
+
+</body>
+
+
+</html>
