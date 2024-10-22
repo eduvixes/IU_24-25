@@ -82,15 +82,17 @@ class validacionesatomicas{
 
 	max_size_file(objfile, minsize){
 		alert(objfile.size);
-		return false;
+		return true;
 	}
 
 	type_file(objfile, array_tipos){
 		alert(objfile.type);
+		return true;
 	}
 
 	format_name_file(objfile, exprreg){
 		alert(objfile.name);
+		return false;
 	}
 
 }

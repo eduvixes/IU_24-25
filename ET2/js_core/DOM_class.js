@@ -108,5 +108,9 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
 
     }
 
+    mostrar_boton_test(){
+        document.getElementById('botonTEST').style.display = 'inline';
+    }
+
 
 } // fin de clase

@@ -17,6 +17,9 @@ class persona extends EntidadAbstracta{
 	*/
 
 	cargar_formulario_html(){
+
+		// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
+		this.accion = '';
 		
 		let formulario = `
 
@@ -77,8 +80,10 @@ class persona extends EntidadAbstracta{
 
 	createForm_ADD(){
 
-		if (eval(this.cargar_formulario_html())){
+		if (eval(this.cargar_formulario_html)){
 			this.cargar_formulario_html();
+			// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
+			this.accion = 'ADD';
 		}
 
 		document.getElementById('label_foto_persona').remove();
@@ -91,13 +96,14 @@ class persona extends EntidadAbstracta{
 
 		document.getElementById("IU_form").setAttribute('onsubmit',"return validar.comprobar_submit();");
 		document.getElementById("IU_form").setAttribute('action',"javascript:validar.ADD();");
+
 		document.getElementById("div_IU_form").style.display = 'block';
 
 	}
 
 	createForm_SEARCH(){
 
-		if (eval(this.cargar_formulario_html())){
+		if (eval(this.cargar_formulario_html)){
 			this.cargar_formulario_html();
 		}
 
@@ -111,35 +117,62 @@ class persona extends EntidadAbstracta{
 
 		document.getElementById("IU_form").setAttribute('onsubmit',"return validar.comprobar_submit_SEARCH();");
 		document.getElementById("IU_form").setAttribute('action',"javascript:validar.SEARCH();");
+
 		document.getElementById("div_IU_form").style.display = 'block';
 
 	}
 
 	createForm_EDIT(parametros){
 
-		if (eval(this.cargar_formulario_html())){
+		if (eval(this.cargar_formulario_html)){
 			this.cargar_formulario_html();
+			// atributo creado para distinguir en comprobar_atributo() entre venir de ADD o EDIT
+			this.accion = 'EDIT';
 		}
 
-		document.getElementById('foto_persona').setAttribute('readonly',true);
-
+		// relleno los valores de los atributos
 		this.rellenarvaloresform(parametros);
 
+		// desactivo los campos necesarios
+		document.getElementById('foto_persona').setAttribute('readonly',true);
+		document.getElementById('dni').setAttribute('readonly',true);
+
+		/*
+		cambio presentacion fecha a formato dd/mm/aaaa directamente en codigo o reutilizando el metodo de cambio de presentacion en tabla
+		*/
+		/*
+		let fech = parametros.fechaNacimiento_persona.split('-');
+    	let fechaformateada = fech[2] + '/' + fech[1] + '/' + fech[0];
+		document.getElementById('fechaNacimiento_persona').value = fechaformateada;
+		*/
+
+		document.getElementById('fechaNacimiento_persona').value = this.cambiardatosespecialestabla('fechaNacimiento_persona', parametros.fechaNacimiento_persona);
+
+		// añado el nombre de fichero a la ruta de href que tengo en el hiperenlace del fichero
 		document.getElementById('link_foto_persona').href += parametros.foto_persona;
 
-		this.colocarvalidaciones('ADD');
 		
+
+		// coloco las validaciones
+		this.colocarvalidaciones('EDIT');
+
+		document.getElementById('foto_persona').removeAttribute('onblur');
+		
+		// coloco el boton
 		this.colocarboton('EDIT');
 
+		// pongo valores a los onsubmit y action
 		document.getElementById("IU_form").setAttribute('onsubmit',"return validar.comprobar_submit();");
 		document.getElementById("IU_form").setAttribute('action',"javascript:validar.EDIT();");
+
+		// pongo visible el formulario
 		document.getElementById("div_IU_form").style.display = 'block';
 
 	}
 
 	createForm_DELETE(parametros){
 
-		if (eval(this.cargar_formulario_html())){
+		if (eval(this.cargar_formulario_html)){
 			this.cargar_formulario_html();
 		}
 
@@ -148,8 +181,20 @@ class persona extends EntidadAbstracta{
 		
 		this.rellenarvaloresform(parametros);
 
+		/*
+		cambio presentacion fecha a formato dd/mm/aaaa directamente en codigo o reutilizando el metodo de cambio de presentacion en tabla
+		*/
+		/*
+		let fech = parametros.fechaNacimiento_persona.split('-');
+    	let fechaformateada = fech[2] + '/' + fech[1] + '/' + fech[0];
+		document.getElementById('fechaNacimiento_persona').value = fechaformateada;
+		*/
+
+		document.getElementById('fechaNacimiento_persona').value = this.cambiardatosespecialestabla('fechaNacimiento_persona', parametros.fechaNacimiento_persona);
+
 		document.getElementById('link_foto_persona').href += parametros.foto_persona;
 
+		// pongo no activos todos los campos
 		this.ponernoactivoform();
 
 		this.colocarboton('DELETE');
@@ -163,7 +208,7 @@ class persona extends EntidadAbstracta{
 
 	createForm_SHOWCURRENT(parametros){
 
-		if (eval(this.cargar_formulario_html())){
+		if (eval(this.cargar_formulario_html)){
 			this.cargar_formulario_html();
 		}
 
@@ -172,12 +217,24 @@ class persona extends EntidadAbstracta{
 		
 		this.rellenarvaloresform(parametros);
 
+		/*
+		cambio presentacion fecha a formato dd/mm/aaaa directamente en codigo o reutilizando el metodo de cambio de presentacion en tabla
+		*/
+		/*
+		let fech = parametros.fechaNacimiento_persona.split('-');
+    	let fechaformateada = fech[2] + '/' + fech[1] + '/' + fech[0];
+		document.getElementById('fechaNacimiento_persona').value = fechaformateada;
+		*/
+
+		document.getElementById('fechaNacimiento_persona').value = this.cambiardatosespecialestabla('fechaNacimiento_persona', parametros.fechaNacimiento_persona);
+
 		document.getElementById('link_foto_persona').href += parametros.foto_persona;
 
 		this.ponernoactivoform();
 
 		document.getElementById("IU_form").setAttribute('onsubmit',"return true;");
 		document.getElementById("IU_form").setAttribute('action',"");
+
 		document.getElementById("div_IU_form").style.display = 'block';
 
 	}
@@ -194,17 +251,14 @@ class persona extends EntidadAbstracta{
 
 		if (!(this.validaciones.min_size('nombre_persona',4))){
 			this.mostrar_error_campo('nombre_persona','nombre_persona_min_size_KO');
-			//return false;
 			return 'nombre_persona_min_size_KO';
 		}
 		if (!(this.validaciones.max_size('nombre_persona',8))){
 			this.mostrar_error_campo('nombre_persona','nombre_persona_max_size_KO');
-			//return false;
 			return 'nombre_persona_max_size_KO'
 		}
 		if (!(this.validaciones.format('nombre_persona', '^[A-Za-z]'))){
 			this.mostrar_error_campo('nombre_persona','nombre_persona_format_KO');
-			//return false;
 			return 'nombre_persona_format_KO'
 		}
 		this.mostrar_exito_campo('nombre_persona');
@@ -239,7 +293,7 @@ class persona extends EntidadAbstracta{
 			this.mostrar_error_campo('fechaNacimiento_persona','fechaNacimiento_persona_format_KO');
 			return 'fechaNacimiento_persona_format_KO';
 		}
-		if (!(this.validacionesespeciales('fechaNacimiento_persona'))){
+		if (!(this.validacionesespeciales('fechaNacimiento_persona','fechavalida'))){
 			this.mostrar_error_campo('fechaNacimiento_persona','fechaNacimiento_persona_valid_KO');
 			return 'fechaNacimiento_persona_valid_KO';
 		}
@@ -279,27 +333,33 @@ class persona extends EntidadAbstracta{
 
 	comprobar_nuevo_foto_persona(){
 
-		if (document.getElementById('nuevo_foto_persona').files.length == 1){
-			alert('entro');
+		if (document.getElementById('nuevo_foto_persona').files.length == 0){
+			if (this.accion == 'EDIT'){
+				return true;
+			}
+			else{
+				this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_empty_KO');
+				return 'nuevo_foto_persona_empty_KO';
+			}
+		}
+		else{
+			// si tuviera un campo con multiples ficheros tendria que hacer un bucle para comprobar cada file[i]
 			this.objfile = document.getElementById('nuevo_foto_persona').files[0];
-			alert(this.objfile.size);
 		}
 
 		if (!(this.validaciones.max_size_file(this.objfile,7))){
 			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_max_size_file_KO');
-			//return false;
 			return 'nuevo_foto_persona_max_size_file_KO';
 		}
-		if (!(this.validaciones.type_file(objfile,Array("application/pdf", "application/msword")))){
+		if (!(this.validaciones.type_file(this.objfile,Array("application/pdf", "application/msword")))){
 			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_type_file_KO');
-			//return false;
 			return 'nuevo_foto_persona_type_file_KO';
 		}
-		if (!(this.validaciones.format_name_file(objfile,'[A-Za-z]{7,100}'))){
+		if (!(this.validaciones.format_name_file(this.objfile,'[A-Za-z]{7,100}'))){
 			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_format_name_file_KO');
-			//return false;
 			return 'nuevo_foto_persona_format_name_file_KO';
 		}
+
 		this.mostrar_exito_campo('nuevo_foto_persona');
 		return true;
 
@@ -312,7 +372,8 @@ class persona extends EntidadAbstracta{
 					(this.comprobar_nombre_persona()) &
 					(this.comprobar_apellidos_persona()) &
 					(this.comprobar_email_persona()) &
-					(this.comprobar_fechaNacimiento_persona()) 
+					(this.comprobar_fechaNacimiento_persona()) &
+					(this.comprobar_nuevo_foto_persona())
 				);
 		
 		result = Boolean(result);
@@ -453,8 +514,8 @@ class persona extends EntidadAbstracta{
 		if (atributo == 'fechaNacimiento_persona'){
 
 			let fech = valoratributo.split('-');
-    			let fechaformateada = fech[2] + '/' + fech[1] + '/' + fech[0];
-    			return fechaformateada;
+    		let fechaformateada = fech[2] + '/' + fech[1] + '/' + fech[0];
+    		return fechaformateada;
 
 		}
 
@@ -464,11 +525,21 @@ class persona extends EntidadAbstracta{
 		metodo para validaciones especiales de atributos en los formularios
 	*/
 
-	validacionesespeciales(atributo){
+	validacionesespeciales(atributo, prueba){
 
 		if (atributo == 'fechaNacimiento_persona'){
-			let fecha = document.getElementById(atributo).value;
-			return (!isNaN(Date.parse(fecha)));
+			if (prueba == 'fechavalida'){
+				let fecha = document.getElementById(atributo).value;
+				let fechaf = fecha.split("/");
+				let day = fechaf[0];
+				let month = fechaf[1];
+				let year = fechaf[2];
+				let date = new Date(year,month,'0');
+				if((day-0)>(date.getDate()-0)){
+					return false;
+				}
+				return true;
+			}
 		}
 
 	}

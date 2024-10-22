@@ -13,6 +13,10 @@ class EntidadAbstracta extends DOM_class{
 
 		this.access_functions = new ExternalAccess();
 		this.validaciones = new validacionesatomicas();
+		this.test = new test(this.entidad);
+
+		// mostrar boton de test una vez creada la clase de entidad
+		this.mostrar_boton_test();
 		
 		this.SEARCH();
 
