@@ -14,6 +14,7 @@
 	<!-- aqui los ficheros implementados para la ET2 -->
 	<script type="text/javascript" src="./js_app/Tests_class.js"></script>
 	<script type="text/javascript" src="./js_app/Validaciones_Atomicas.js"></script>
+	<script type="text/javascript" src="./js_app/project.js"></script>
 	<script type="text/javascript" src="./js_app/funcionalidad.js"></script>
 	<script type="text/javascript" src="./js_app/persona.js"></script>
 
@@ -43,6 +44,8 @@
 		<ol>
 		    <li class="opcionmenu"><span onclick="validar = new persona();">Datos Personales</span></li>
 		    <li class="opcionmenu"><span onclick="validar = new funcionalidad();">Funcionalidad</span></li>
+		    <li class="opcionmenu"><span onclick="validar = new project();">Project</span></li>
+		    <li class="opcionmenu"><span onclick="validar = new persona();">Datos Personales</span></li>
 	  	</ol>
 	</aside>
 
@@ -84,19 +87,33 @@
 	</div>
 
 
-	<div class = "div_IU_form" id='div_IU_test'>
-		<div class = "contenidoForm" id="contenidoForm">
+	<div class = "contenidoForm" id='div_IU_test'>
+
+		<div class = "" id="contenidoTests">
 			<h1>Resultado estructura definición tests</h1>
         	<p id="resultadodef"></p>
-			<table border="1" style="width: 100%;table-layout: fixed;">
+			<table border="1">
 				<tbody id="tablaresultadostest">
 				</tbody>
-
 			</table>
-			<img src="./iconos/BACK.png" onclick="" />
+			<img src="./iconos/BACK.png" onclick="validar.cerrar_test();" />
 		</div>
-	
+
+		<div class = "" id="contenidoPruebas">
+	        <h1>Resultado estructura definición pruebas</h1>
+	        <p id="resultadoprueba"></p>
+	        <div id="div_tabla_prueba">
+	            <table id="tabla_prueba" border="1">
+	            	<tbody id="tablaresultadosprueba">
+					</tbody>
+	            </table>
+			<img src="./iconos/BACK.png" onclick="validar.cerrar_pruebas();" />
+	        </div>
+	    </div>
+
 	</div>
+
+
 
 	<footer class='bordeado'>Pie de página</footer>
 	
@@ -107,6 +124,8 @@
 		document.getElementById('id_tabla_datos').style.display = 'none';
 		document.getElementById('botonTEST').style.display = 'none';
 		document.getElementById('div_IU_test').style.display = 'none';
+		document.getElementById('contenidoTests').style.display = 'none';
+		document.getElementById('contenidoPruebas').style.display = 'none';
 
 		function menu_work(){
 			if (document.getElementById('div-menu').style.display == 'none'){

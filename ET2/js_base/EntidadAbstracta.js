@@ -17,6 +17,11 @@ class EntidadAbstracta extends DOM_class{
 
 		// mostrar boton de test una vez creada la clase de entidad
 		this.mostrar_boton_test();
+
+		// poner no visible los test y vaciarlos
+		document.getElementById('div_IU_test').style.display = 'none';
+		this.cerrar_test();
+		this.cerrar_pruebas();
 		
 		this.SEARCH();
 

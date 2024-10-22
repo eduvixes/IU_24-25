@@ -100,6 +100,16 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
 
     }
 
+    cerrar_test(){
+        document.getElementById("contenidoTests").style.display = 'none';
+        document.getElementById("tablaresultadostest").innerHTML = '';
+    }
+
+    cerrar_pruebas(){
+        document.getElementById("contenidoPruebas").style.display = 'none';
+        document.getElementById("tablaresultadosprueba").innerHTML = '';
+    }
+
     cerrar_tabla(){
 
         document.getElementById("titulostablacabecera").innerHTML = '';
