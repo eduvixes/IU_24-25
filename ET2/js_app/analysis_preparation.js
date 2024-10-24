@@ -1,10 +1,10 @@
-class project extends EntidadAbstracta{
+class analysis_preparation extends EntidadAbstracta{
 
 	constructor(){
 		
 		super();
 		this.columnasamostrar = Array();
-		this.entidad = 'project';
+		this.entidad = 'analysis_preparation';
 
 		this.inicializar();
 
