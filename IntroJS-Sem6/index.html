@@ -51,16 +51,8 @@
         	<div id="addysearch">
         		<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm_ADD();" />
         		<img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm_SEARCH();"/>
-				<li class="opcionmenu"><span>columnas : </span></li>
-				<ol>
-					<li class="columnas">
-						<input type="checkbox" id="dni" name="dni" value="dni" onclick="validar.cambiacolumnastabla('dni');" /><label class="dni">1</label>
-						<input type="checkbox" id="nombre_persona" nombre="nombre_persona" value="nombre_persona" onclick="validar.cambiacolumnastabla('nombre_persona');" /><label class="nombre_persona">2</label>
-						<input type="checkbox" id="apellidos_persona" nombre="apellidos_persona" value="apellidos_persona" onclick="validar.cambiacolumnastabla('apellidos_persona');" /><label class="apellidos_persona">3</label>
-						<input type="checkbox" name="columnas[]" onclick="validar.cambiacolumnastabla();" /><label class="fechaNacimiento_persona">4</label>
-						<input type="checkbox" name="columnas[]" onclick="validar.cambiacolumnastabla();" /><label class="foto_persona">5</label>
-					</li>
-				</ol>
+				<span>columnas :</span>
+				<select id="seleccioncolumnas" multiple></select>
         	</div>
     	
         	<table id="tabladatosalumnos">
