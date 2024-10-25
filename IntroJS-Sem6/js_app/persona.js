@@ -107,8 +107,8 @@ class persona extends EntidadAbstracta{
 			this.cargar_formulario_html();
 		}
 
-		document.getElementById('label_foto_persona').remove();
-		document.getElementById('foto_persona').remove();
+		document.getElementById('label_nuevo_foto_persona').remove();
+		document.getElementById('nuevo_foto_persona').remove();
 		document.getElementById('link_foto_persona').remove();
 
 		this.colocarvalidaciones('SEARCH');
@@ -338,31 +338,40 @@ class persona extends EntidadAbstracta{
 				return true;
 			}
 			else{
-				this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_empty_KO');
-				return 'nuevo_foto_persona_empty_KO';
+				if (this.accion = "ADD"){
+					this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_empty_KO');
+					return 'nuevo_foto_persona_empty_KO';
+				}
 			}
 		}
-		else{
-			// si tuviera un campo con multiples ficheros tendria que hacer un bucle para comprobar cada file[i]
-			this.objfile = document.getElementById('nuevo_foto_persona').files[0];
-		}
+	
+		// si tuviera un campo con multiples ficheros tendria que hacer un bucle para comprobar cada file[i]
+		let mifichero = document.getElementById('nuevo_foto_persona').files[0];
+		
 
-		if (!(this.validaciones.max_size_file(this.objfile,7))){
+		if (!(this.validaciones.max_size_file(mifichero,7))){
 			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_max_size_file_KO');
 			return 'nuevo_foto_persona_max_size_file_KO';
 		}
-		if (!(this.validaciones.type_file(this.objfile,Array("application/pdf", "application/msword")))){
+		if (!(this.validaciones.type_file(mifichero,Array("application/pdf", "application/msword","image/jpeg")))){
 			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_type_file_KO');
 			return 'nuevo_foto_persona_type_file_KO';
 		}
-		if (!(this.validaciones.format_name_file(this.objfile,'[A-Za-z]{7,100}'))){
+		if (!(this.validaciones.format_name_file(mifichero,'[A-Za-z.]'))){
 			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_format_name_file_KO');
 			return 'nuevo_foto_persona_format_name_file_KO';
+		}
+		if (!this.validaciones.min_size(nuevo_foto_persona,7)){
+			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_min_size_KO');
+			return 'nuevo_foto_persona_min_size_KO';
+		}
+		if (!this.validaciones.max_size(nuevo_foto_persona,100)){
+			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_max_size_KO');
+			return 'nuevo_foto_persona_max_size_KO';
 		}
 
 		this.mostrar_exito_campo('nuevo_foto_persona');
 		return true;
-
 
 	}
 

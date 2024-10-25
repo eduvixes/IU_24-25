@@ -14,13 +14,10 @@
 	<!-- aqui los ficheros implementados para la ET2 -->
 	<script type="text/javascript" src="./js_app/Tests_class.js"></script>
 	<script type="text/javascript" src="./js_app/Validaciones_Atomicas.js"></script>
-	<script type="text/javascript" src="./js_app/project.js"></script>
 	<script type="text/javascript" src="./js_app/funcionalidad.js"></script>
 	<script type="text/javascript" src="./js_app/persona.js"></script>
 
 	<!-- aqui los ficheros de test de cada entidad -->
-	<script type="text/javascript" src="./js_app/tests_analysis_preparation.js"></script>
-	<script type="text/javascript" src="./js_app/tests_project.js"></script>
 	<script type="text/javascript" src="./js_app/tests_persona.js"></script>
 
 	<!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
@@ -44,8 +41,6 @@
 		<ol>
 		    <li class="opcionmenu"><span onclick="validar = new persona();">Datos Personales</span></li>
 		    <li class="opcionmenu"><span onclick="validar = new funcionalidad();">Funcionalidad</span></li>
-		    <li class="opcionmenu"><span onclick="validar = new project();">Project</span></li>
-		    <li class="opcionmenu"><span onclick="validar = new persona();">Datos Personales</span></li>
 	  	</ol>
 	</aside>
 
@@ -56,6 +51,16 @@
         	<div id="addysearch">
         		<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm_ADD();" />
         		<img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm_SEARCH();"/>
+				<li class="opcionmenu"><span>columnas : </span></li>
+				<ol>
+					<li class="columnas">
+						<input type="checkbox" id="dni" name="dni" value="dni" onclick="validar.cambiacolumnastabla('dni');" /><label class="dni">1</label>
+						<input type="checkbox" id="nombre_persona" nombre="nombre_persona" value="nombre_persona" onclick="validar.cambiacolumnastabla('nombre_persona');" /><label class="nombre_persona">2</label>
+						<input type="checkbox" id="apellidos_persona" nombre="apellidos_persona" value="apellidos_persona" onclick="validar.cambiacolumnastabla('apellidos_persona');" /><label class="apellidos_persona">3</label>
+						<input type="checkbox" name="columnas[]" onclick="validar.cambiacolumnastabla();" /><label class="fechaNacimiento_persona">4</label>
+						<input type="checkbox" name="columnas[]" onclick="validar.cambiacolumnastabla();" /><label class="foto_persona">5</label>
+					</li>
+				</ol>
         	</div>
     	
         	<table id="tabladatosalumnos">

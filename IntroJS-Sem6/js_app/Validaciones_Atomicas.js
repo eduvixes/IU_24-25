@@ -92,7 +92,7 @@ class validacionesatomicas{
 
 	format_name_file(objfile, exprreg){
 		alert(objfile.name);
-		return false;
+		return true;
 	}
 
 }

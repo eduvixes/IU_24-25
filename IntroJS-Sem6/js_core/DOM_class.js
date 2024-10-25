@@ -55,7 +55,7 @@ crearboton(entidad, accion, parametros){
 mostrarDatos(entidad, datosfilas, columnasamostrar){
 
             let textolineadatos = '';
-        
+
             for (let i=0;i<datosfilas.length;i++){
         
                 textolineadatos += '<tr style="background-color:grey;">';

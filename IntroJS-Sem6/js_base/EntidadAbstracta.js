@@ -165,6 +165,18 @@ class EntidadAbstracta extends DOM_class{
     
     }
 
-	
+	cambiacolumnastabla(atributo){
+
+		/*if (this.columnasamostrar.includes(atributo)){
+			this.columnasamostrar = this.columnasamostrar.filter(columna => columna != atributo);
+			this.mostrarDatos();
+		}
+		else{
+			alert('no esta');
+		}*/
+
+		document.querySelector("th[class='"+atributo+"']").style.display = 'none';
+
+	}
 
 }
