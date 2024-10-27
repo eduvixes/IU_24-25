@@ -94,7 +94,7 @@ General
     color: #333;
 }
 
-.class_contenido_titulo_form{
+#class_contenido_titulo_form{
     left: 50%;
     position: absolute;
     top: 50%;
