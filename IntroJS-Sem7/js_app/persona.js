@@ -631,6 +631,9 @@ class persona extends EntidadAbstracta{
 	        }
 	}
 
+
+	/*
+
 	crearTablaDatos(){
 
 		document.getElementById("id_tabla_datos").style.display = 'block';
@@ -766,5 +769,6 @@ class persona extends EntidadAbstracta{
 
 	}
 
+	*/
 	
 }
