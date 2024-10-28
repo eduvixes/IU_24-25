@@ -5,26 +5,24 @@
 	
 	<link rel="stylesheet" type="text/css" href="./css/index.css" media="screen" />
 	
+	<!-- ficheros de idiomas -->
+	<script type="text/javascript" src="./locale/idioma.js"></script>
+	<script type="text/javascript" src="./js_app/Textos_ES.js"></script>
+	<script type="text/javascript" src="./js_app/Textos_EN.js"></script>
 
 	<script type="text/javascript" src="./js_core/ExternalAccess.js"></script>
-	<script type="text/javascript" src="./locale/idioma.js"></script>
 	
 	<script type="text/javascript" src="./js_core/DOM_class.js"></script>
 	<script type="text/javascript" src="./js_base/EntidadAbstracta.js"></script>
 
-	<!-- aqui los ficheros para la ET2 -->
+	<!-- aqui los ficheros implementados para la ET2 -->
 	<script type="text/javascript" src="./js_app/Tests_class.js"></script>
 	<script type="text/javascript" src="./js_app/Validaciones_Atomicas.js"></script>
-	<script type="text/javascript" src="./js_app/project.js"></script>
-	<script type="text/javascript" src="./js_app/analysis_preparation.js"></script>
+	<script type="text/javascript" src="./js_app/funcionalidad.js"></script>
+	<script type="text/javascript" src="./js_app/persona.js"></script>
 
-	<!-- aqui los ficheros de test de cada entidad para la ET2-->
-	<script type="text/javascript" src="./js_app/tests_analysis_preparation.js"></script>
-	<script type="text/javascript" src="./js_app/tests_project.js"></script>
-
-	<!-- aqui los ficheros de multiidioma para la ET2-->
-	<script type="text/javascript" src="./js_app/Textos_ES.js"></script>
-	<script type="text/javascript" src="./js_app/Textos_EN.js"></script>
+	<!-- aqui los ficheros de test de cada entidad -->
+	<script type="text/javascript" src="./js_app/tests_persona.js"></script>
 
 	<!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -33,30 +31,43 @@
 
 <body onload="">
 
-	<header id='header_page' class='bordeado'><spam class="titulo_app"><spam>
-		<select id="idioma">
-        			<option value='ES'>ES</option>
-        			<option value='EN'>EN</option>
-        </select>
+	<header id='header_page' class='bordeado'><spam class="text_titulo_app">MIS DATOS PERSONALES</spam>
+		
+		<img src="./iconos/Spain.png" onclick="setLang('ES');" />
+        <img src="./iconos/United-Kingdom.png" onclick="setLang('EN');" />
+
 		<img id="botonTEST" src="./iconos/TEST.png" onclick="validar.test.test_run();"/>
 	</header>
 
-	<nav class='bordeado'><span onclick="menu_work();">Opciones de ménu</span></nav>
+	<nav class='bordeado'><span class="text_titulo_menu" onclick="menu_work();">Opciones de ménu</span></nav>
 
 	<aside id='div-menu'>
 		<ol>
-		    <li class="opcionmenu"><span onclick="validar = new project();">Project</span></li>
-		    <li class="opcionmenu"><span onclick="validar = new analysis_preparation();">Analysis_preparation</span></li>
+		    <li class="opcionmenu"><span class="text_datos_personales" onclick="validar = new persona();">Datos Personales</span></li>
+		    <li class="opcionmenu"><span class="text_funcionalidad" onclick="validar = new funcionalidad();">Funcionalidad</span></li>
 	  	</ol>
 	</aside>
 
 	<section id = "workspace" class='bordeado'>
+
+		<div id='title_page' class='bordeado'><spam id = "text_title_page" class="">titulo de pagina de entidad</spam>
+		</div>
 
 		<div id="id_tabla_datos">
         	
         	<div id="addysearch">
         		<img id="botonADD" src="./iconos/ADD.png" onclick="validar.createForm_ADD();" />
         		<img id="botonSEARCH" src="./iconos/SEARCH.png" onclick="validar.createForm_SEARCH();"/>
+				
+				<select id="seleccioncolumnas" size="2" multiple >
+				</select>
+				
+				<!--
+				<div id="checkboxcolumnas" class="dropdown">
+					<button>Selecciona Columnas</button>
+				</div>
+				<select id="mySelect" multiple></select>
+				-->
         	</div>
     	
         	<table id="tabladatosalumnos">
@@ -75,7 +86,7 @@
 			
 			<div class = "contenidoForm" id="contenidoForm">
 				<div class = "class_titulo_form">
-					<spam id="class_contenido_titulo_form" class = "class_contenido_titulo_form" >titulo para el formulario de este tamano</spam>
+					<spam id="class_contenido_titulo_form" class = "" >titulo para el formulario de este tamano</spam>
 				</div>
 
 				<form id='IU_form' name='IU_form' method='POST' enctype="multipart/form-data" class="formulario">
@@ -116,13 +127,14 @@
 
 
 
-	<footer class='bordeado'>Pie de página</footer>
+	<footer class='bordeado'><spam class="text_titulo_pie">Pie de página</spam></footer>
 	
 	<script type="text/javascript">
 
 		document.getElementById('div-menu').style.display = 'none';
 		document.getElementById('div_IU_form').style.display = 'none';
 		document.getElementById('id_tabla_datos').style.display = 'none';
+		document.getElementById('title_page').style.display = 'none';
 		document.getElementById('botonTEST').style.display = 'none';
 		document.getElementById('div_IU_test').style.display = 'none';
 		document.getElementById('contenidoTests').style.display = 'none';
@@ -136,6 +148,9 @@
 				document.getElementById('div-menu').style.display = 'none';
 			}
 		}
+
+		setLang('');
+
 	</script>
 
 </body>

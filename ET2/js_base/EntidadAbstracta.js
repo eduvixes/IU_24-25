@@ -28,12 +28,30 @@ class EntidadAbstracta extends DOM_class{
 
 	}
 
+	/*
+
 	crearTablaDatos(){
 
 		document.getElementById("id_tabla_datos").style.display = 'block';
 		this.mostrarTitulos(this.columnasamostrar);
 		this.mostrarDatos(this.entidad, this.datos, this.columnasamostrar);
 	
+	}
+
+	*/
+
+	crearTablaDatos(){
+
+		document.getElementById("id_tabla_datos").style.display = 'block';
+
+		//construir tabla
+		this.hacertabla();
+		//construir select
+		this.construirSelect();
+		
+		//ocultar segun columnasamostrar
+		this.mostrarocultarcolumnas();
+
 	}
 
 	cargar_formulario(){
@@ -165,6 +183,18 @@ class EntidadAbstracta extends DOM_class{
     
     }
 
-	
+	cambiacolumnastabla(atributo){
+
+		/*if (this.columnasamostrar.includes(atributo)){
+			this.columnasamostrar = this.columnasamostrar.filter(columna => columna != atributo);
+			this.mostrarDatos();
+		}
+		else{
+			alert('no esta');
+		}*/
+
+		document.querySelector("th[class='"+atributo+"']").style.display = 'none';
+
+	}
 
 }
