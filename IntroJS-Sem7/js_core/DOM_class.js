@@ -9,7 +9,6 @@ mostrar_error_campo(id, codigoerror){
 	document.getElementById('div_error_'+id).innerHTML = codigoerror;
     document.getElementById('div_error_'+id).className = codigoerror;
     document.getElementById(id).className = 'errorcampo';
-	//document.getElementById(id).style.borderBlockColor = 'red';
 	document.getElementById('submit_button').focus();
     setLang();
 }
@@ -17,7 +16,6 @@ mostrar_error_campo(id, codigoerror){
 mostrar_exito_campo(id){
 	document.getElementById('div_error_'+id).style.display = 'none';
 	document.getElementById('div_error_'+id).innerHTML = '';
-	//document.getElementById(id).style.borderBlockColor = 'green';
     document.getElementById(id).className = 'exitocampo';
 }
 

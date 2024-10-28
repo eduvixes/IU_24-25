@@ -693,7 +693,6 @@ class persona extends EntidadAbstracta{
 		for (let atributo of this.atributos){
 			optionselect = document.createElement('option');
 			optionselect.className = atributo;
-			optionselect.value = atributo;
 			optionselect.innerHTML = atributo;
 			optionselect.setAttribute("onclick","validar.modificarcolumnasamostrar('"+atributo+"');");
 			if (this.columnasamostrar.includes(atributo)){
@@ -717,7 +716,6 @@ class persona extends EntidadAbstracta{
 
 		for (let atributo of this.atributos){
 		
-        	//textolineatitulos += '<th class="'+atributo+' tabla-th-'+atributo+'">'+atributo+'</th>';
         	textolineatitulos += '<th class="'+atributo+'">'+atributo+'</th>';
         
 		}  

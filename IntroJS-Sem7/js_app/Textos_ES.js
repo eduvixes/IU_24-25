@@ -48,22 +48,22 @@ let textos_ES = {
 	'fechaNacimiento_persona_valid_KO': 'Fecha no válida. La fecha debe existir',
 
 	// email persona
-	'email_persona_min_size_KO': 
-	'email_persona_max_size_KO':
-	'email_persona_format_KO':
+	'email_persona_min_size_KO': '',
+	'email_persona_max_size_KO':'',
+	'email_persona_format_KO':'',
 
 	// nuevo foto persona	
-	'nuevo_foto_persona_empty_KO':
-	'nuevo_foto_persona_max_size_file_KO':
-	'nuevo_foto_persona_type_file_KO':
-	'nuevo_foto_persona_format_name_file_KO':
-	'nuevo_foto_persona_min_size_KO':
-	'nuevo_foto_persona_max_size_KO':
+	'nuevo_foto_persona_empty_KO':'',
+	'nuevo_foto_persona_max_size_file_KO':'',
+	'nuevo_foto_persona_type_file_KO':'',
+	'nuevo_foto_persona_format_name_file_KO':'',
+	'nuevo_foto_persona_min_size_KO':'',
+	'nuevo_foto_persona_max_size_KO':'',
 
 	//SEARCH
 	// foto persona
-	'foto_persona_max_size_KO':
-	'foto_persona_format_KO':
+	'foto_persona_max_size_KO':'',
+	'foto_persona_format_KO':'',
 
 
 }

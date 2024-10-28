@@ -18,15 +18,12 @@ function setLang(lang=''){
     switch(lang) {
         case 'ES' : 
            traduccion=textos_ES;
-           //document.getElementById("imagenIdioma").src = "images/Spain.png";
         break;
         case 'EN' :
            traduccion=textos_EN;
-           //document.getElementById("imagenIdioma").src = "images/United-Kingdom.png";
         break;
         default:
            traduccion=textos_ES;
-           //document.getElementById("imagenIdioma").src = "images/Spain.png";
         break;
     }
 
