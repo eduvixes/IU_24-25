@@ -64,7 +64,12 @@ class EntidadAbstracta extends DOM_class{
 				this.cargar_formulario_dinamico();
 			}
 			else{
-				alert('no existe formulario');
+				
+				// alert('no existe formulario');
+				// Usando modal
+				document.getElementById('error_action_msg').innerHTML = 'no existe formulario';
+				document.getElementById('error_action_modal').style.display = 'block';
+				document.getElementById('modal_accion_overlay').style.display = 'block';
 			}
 		}
 
@@ -125,7 +130,12 @@ class EntidadAbstracta extends DOM_class{
 	        else{
 
 	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+	        	// alert('error : '+respuesta['code']);
+
+				// Usando modal
+				document.getElementById('error_action_msg').innerHTML = respuesta['code'];
+				document.getElementById('error_action_modal').style.display = 'block';
+				document.getElementById('modal_accion_overlay').style.display = 'block';
 	        }
 
         });
@@ -150,7 +160,11 @@ class EntidadAbstracta extends DOM_class{
 	        else{
 
 	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+	        	// alert('error : '+respuesta['code']);
+				// Usando modal
+				document.getElementById('error_action_msg').innerHTML = respuesta['code'];
+				document.getElementById('error_action_modal').style.display = 'block';
+				document.getElementById('modal_accion_overlay').style.display = 'block';
 	        }
 
         });
@@ -176,7 +190,11 @@ class EntidadAbstracta extends DOM_class{
 	        else{
 
 	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+	        	// alert('error : '+respuesta['code']);
+				// Usando modal
+				document.getElementById('error_action_msg').innerHTML = respuesta['code'];
+				document.getElementById('error_action_modal').style.display = 'block';
+				document.getElementById('modal_accion_overlay').style.display = 'block';
 	        }
 
         });

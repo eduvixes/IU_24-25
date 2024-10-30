@@ -153,6 +153,24 @@
 
 	</script>
 
+	<!-- Overlay para acompañar el modal -->
+	<div id="modal_accion_overlay"></div>
+
+	<!-- Modal para mostrar los errores de accion -->
+	<div id="error_action_modal" style="position: fixed; z-index: 9999; display: none; border: 3px solid; border-radius: 10px; background-color: white; padding: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+		<span id="error_action_msg"></span>
+		<!--<img src="./iconos/BACK.png" onclick="cerrarModalError();" />-->
+		<button onclick="cerrarModalError()">X</button>
+	</div>
+
+	<!-- Script con la funcion para que el boton "cierre" el modal con errores de accion -->
+	<script type="text/javascript">
+		function cerrarModalError(){
+			document.getElementById('error_action_modal').style.display = 'none';
+			document.getElementById('modal_accion_overlay').style.display = 'none';
+		}
+	</script>
+
 </body>
 
 
