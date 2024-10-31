@@ -113,7 +113,7 @@ General
   display: inline-block;
 }
 
-#error_accion_modal{
+#error_action_modal{
     position: fixed;
     z-index: 9999; 
     display: none; 
@@ -126,7 +126,7 @@ General
     transform: translate(-50%, -50%);
 }
 
-#modal_accion_overlay{
+#modal_action_overlay{
     position: fixed;
     top: 0;
     left: 0;
