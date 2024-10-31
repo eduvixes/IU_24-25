@@ -64,6 +64,6 @@ let textos_ES = {
 	// foto persona
 	'foto_persona_max_size_KO':'',
 	'foto_persona_format_KO':'',
-
+	'dni_es_nulo_KO': 'El DNI es nulo',
 
 }

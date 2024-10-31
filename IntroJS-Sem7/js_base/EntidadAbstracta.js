@@ -64,7 +64,10 @@ class EntidadAbstracta extends DOM_class{
 				this.cargar_formulario_dinamico();
 			}
 			else{
-				alert('no existe formulario');
+				
+				// alert('no existe formulario');
+				// Usando modal
+				this.abrirModalError('no existe formulario');
 			}
 		}
 
@@ -125,7 +128,10 @@ class EntidadAbstracta extends DOM_class{
 	        else{
 
 	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+	        	// alert('error : '+respuesta['code']);
+
+				// Usando modal
+				this.abrirModalError(respuesta['code']);
 	        }
 
         });
@@ -150,7 +156,9 @@ class EntidadAbstracta extends DOM_class{
 	        else{
 
 	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+	        	// alert('error : '+respuesta['code']);
+				// Usando modal
+				this.abrirModalError(respuesta['code']);
 	        }
 
         });
@@ -176,7 +184,9 @@ class EntidadAbstracta extends DOM_class{
 	        else{
 
 	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+	        	// alert('error : '+respuesta['code']);
+				// Usando modal
+				this.abrirModalError(respuesta['code']);
 	        }
 
         });

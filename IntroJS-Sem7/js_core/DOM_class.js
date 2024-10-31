@@ -250,5 +250,17 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
         document.getElementById('botonTEST').style.display = 'inline';
     }
 
+    abrirModalError(errorMsg) {
+        document.getElementById('error_action_modal').style.display = 'block';
+        document.getElementById('modal_action_overlay').style.display = 'block';
+        document.getElementById('error_action_msg').className = errorMsg;
+        setLang();
+    }
+
+    cerrarModalError(){
+        document.getElementById('error_action_modal').style.display = 'none';
+        document.getElementById('modal_action_overlay').style.display = 'none';
+        //document.getElementById('error_action_msg').removeAttribute('class');
+    }
 
 } // fin de clase
