@@ -290,7 +290,7 @@ class persona extends EntidadAbstracta{
 			//return false;
 			return 'apellidos_persona_max_size_KO'
 		}
-		if (!(this.validaciones.format('apellidos_persona', '^[A-Z]+$\s'))){
+		if (!(this.validaciones.format('apellidos_persona', '[A-Za-z]+$'))){
 			this.mostrar_error_campo('apellidos_persona','apellidos_persona_format_KO');
 			//return false;
 			return 'apellidos_persona_format_KO'
