@@ -61,6 +61,7 @@ class persona extends EntidadAbstracta{
 			<br>
 			<label id="label_foto_persona" class="label_foto_persona">Foto Persona</label>
 			<input type='text' id='foto_persona' name='foto_persona'></input>
+			<span id="div_error_foto_persona"><a id="error_foto_persona"></a></span>
 			<a id="link_foto_persona" href="http://193.147.87.202/ET2/filesuploaded/files_foto_persona/"><img src="./iconos/FILE.png" /></a>
 			<label id="label_nuevo_foto_persona" class="label_nuevo_foto_persona">Nueva Foto Persona</label>
 			<input type='file' id='nuevo_foto_persona' name='nuevo_foto_persona'></input>
@@ -264,11 +265,11 @@ class persona extends EntidadAbstracta{
 			this.mostrar_error_campo('nombre_persona','nombre_persona_min_size_KO');
 			return 'nombre_persona_min_size_KO';
 		}
-		if (!(this.validaciones.max_size('nombre_persona',8))){
+		if (!(this.validaciones.max_size('nombre_persona',20))){
 			this.mostrar_error_campo('nombre_persona','nombre_persona_max_size_KO');
 			return 'nombre_persona_max_size_KO'
 		}
-		if (!(this.validaciones.format('nombre_persona', '^[A-Za-z]'))){
+		if (!(this.validaciones.format('nombre_persona', '[A-Za-z]+$'))){
 			this.mostrar_error_campo('nombre_persona','nombre_persona_format_KO');
 			return 'nombre_persona_format_KO'
 		}
@@ -289,7 +290,7 @@ class persona extends EntidadAbstracta{
 			//return false;
 			return 'apellidos_persona_max_size_KO'
 		}
-		if (!(this.validaciones.format('apellidos_persona', '^[A-Za-z]'))){
+		if (!(this.validaciones.format('apellidos_persona', '^[A-Z]+$\s'))){
 			this.mostrar_error_campo('apellidos_persona','apellidos_persona_format_KO');
 			//return false;
 			return 'apellidos_persona_format_KO'
@@ -333,7 +334,7 @@ class persona extends EntidadAbstracta{
 			//return false;
 			return 'email_persona_max_size_KO';
 		}
-		if (!(this.validaciones.format('email_persona','^[^@]+@[^@]+\.[a-zA-Z]{2,}$'))){
+		if (!(this.validaciones.format('email_persona','^[^@]+@[^@]+\.[A-Za-z]{2,}$'))){
 			this.mostrar_error_campo('email_persona','email_persona_format_KO');
 			//return false;
 			return 'email_persona_format_KO';
@@ -368,7 +369,7 @@ class persona extends EntidadAbstracta{
 			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_type_file_KO');
 			return 'nuevo_foto_persona_type_file_KO';
 		}
-		if (!(this.validaciones.format_name_file(mifichero,'[A-Za-z.]'))){
+		if (!(this.validaciones.format_name_file(mifichero,'[A-Z.]+$'))){
 			this.mostrar_error_campo('nuevo_foto_persona','nuevo_foto_persona_format_name_file_KO');
 			return 'nuevo_foto_persona_format_name_file_KO';
 		}
@@ -416,7 +417,7 @@ class persona extends EntidadAbstracta{
 			//return false;
 			return 'nombre_persona_max_size_KO'
 		}
-		if (!(this.validaciones.format('nombre_persona', '[A-Za-z ]{0,8}'))){
+		if (!(this.validaciones.format('nombre_persona', '[A-Za-z]*$'))){
 			this.mostrar_error_campo('nombre_persona','nombre_persona_format_KO');
 			//return false;
 			return 'nombre_persona_format_KO'
@@ -428,12 +429,12 @@ class persona extends EntidadAbstracta{
 
 	comprobar_apellidos_persona_SEARCH(){
 
-		if (!(this.validaciones.max_size('apellidos_persona',8))){
+		if (!(this.validaciones.max_size('apellidos_persona',20))){
 			this.mostrar_error_campo('apellidos_persona','apellidos_persona_max_size_KO');
 			//return false;
 			return 'apellidos_persona_max_size_KO'
 		}
-		if (!(this.validaciones.format('apellidos_persona', '[A-Za-z ]{0,20}'))){
+		if (!(this.validaciones.format('apellidos_persona', '[A-Z\s]'))){
 			this.mostrar_error_campo('apellidos_persona','apellidos_persona_format_KO');
 			//return false;
 			return 'apellidos_persona_format_KO'
@@ -481,12 +482,12 @@ class persona extends EntidadAbstracta{
 
 	comprobar_foto_persona_SEARCH(){
 
-		if (!(this.validaciones.max_size('_persona',20))){
+		if (!(this.validaciones.max_size('foto_persona',20))){
 			this.mostrar_error_campo('foto_persona','foto_persona_max_size_KO');
 			//return false;
 			return 'foto_persona_max_size_KO';
 		}
-		if (!(this.validaciones.format('foto_persona','^[a-zA-Z]{0,20}'))){
+		if (!(this.validaciones.format('foto_persona','[A-Z]+${,20}'))){
 			this.mostrar_error_campo('foto_persona','foto_persona_format_KO');
 			//return false;
 			return 'foto_persona_format_KO';

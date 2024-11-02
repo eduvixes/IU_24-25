@@ -65,5 +65,10 @@ let textos_ES = {
 	'foto_persona_max_size_KO':'',
 	'foto_persona_format_KO':'',
 
+	//errores acciones
+	
+	'dni_es_nulo_KO':'El dni no puede ser vacio',
+
+	'admin_no_se_puede_modificar_KO':'El admin no se puede modificar',
 
 }

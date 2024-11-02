@@ -1,7 +1,7 @@
-class DOM_class{
+class DOM_class extends test{
 
     constructor(){
-
+        super();
     }
 
 mostrar_error_campo(id, codigoerror){

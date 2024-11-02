@@ -1,7 +1,7 @@
-class DOM_class{
+class DOM_class extends test{
 
     constructor(){
-
+        super();
     }
 
 mostrar_error_campo(id, codigoerror){
@@ -229,14 +229,9 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
     }
 
     cerrar_test(){
-        document.getElementById("contenidoTests").style.display = 'none';
-        document.getElementById("tablaresultadostest").innerHTML = '';
+        document.getElementById("div_IU_test").style.display = 'none';
     }
 
-    cerrar_pruebas(){
-        document.getElementById("contenidoPruebas").style.display = 'none';
-        document.getElementById("tablaresultadosprueba").innerHTML = '';
-    }
 
     cerrar_tabla(){
 
@@ -250,5 +245,17 @@ mostrarDatos(entidad, datosfilas, columnasamostrar){
         document.getElementById('botonTEST').style.display = 'inline';
     }
 
+    abrirModalError(errorMsg) {
+        document.getElementById('error_action_modal').style.display = 'block';
+        document.getElementById('modal_action_overlay').style.display = 'block';
+        document.getElementById('error_action_msg').className = errorMsg;
+        setLang();
+    }
 
+    cerrarModalError(){
+        document.getElementById('error_action_modal').style.display = 'none';
+        document.getElementById('modal_action_overlay').style.display = 'none';
+        //document.getElementById('error_action_msg').removeAttribute('class');
+    }
+    
 } // fin de clase

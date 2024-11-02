@@ -268,7 +268,7 @@ class persona extends EntidadAbstracta{
 			this.mostrar_error_campo('nombre_persona','nombre_persona_max_size_KO');
 			return 'nombre_persona_max_size_KO'
 		}
-		if (!(this.validaciones.format('nombre_persona', '^[A-Za-z]'))){
+		if (!(this.validaciones.format('nombre_persona', '[A-Za-z]+$'))){
 			this.mostrar_error_campo('nombre_persona','nombre_persona_format_KO');
 			return 'nombre_persona_format_KO'
 		}
@@ -416,7 +416,7 @@ class persona extends EntidadAbstracta{
 			//return false;
 			return 'nombre_persona_max_size_KO'
 		}
-		if (!(this.validaciones.format('nombre_persona', '[A-Za-z ]{0,8}'))){
+		if (!(this.validaciones.format('nombre_persona', '[A-Za-z]+${0,8}'))){
 			this.mostrar_error_campo('nombre_persona','nombre_persona_format_KO');
 			//return false;
 			return 'nombre_persona_format_KO'
@@ -433,7 +433,7 @@ class persona extends EntidadAbstracta{
 			//return false;
 			return 'apellidos_persona_max_size_KO'
 		}
-		if (!(this.validaciones.format('apellidos_persona', '[A-Za-z ]{0,20}'))){
+		if (!(this.validaciones.format('apellidos_persona', `^[A-ZÁÉÍÓÚÑ ]+$', 'i'`))){
 			this.mostrar_error_campo('apellidos_persona','apellidos_persona_format_KO');
 			//return false;
 			return 'apellidos_persona_format_KO'

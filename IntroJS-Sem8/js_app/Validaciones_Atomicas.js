@@ -58,7 +58,7 @@ class validacionesatomicas{
 					case 'number':
 					case 'email':
 					case 'text':
-						let valorelemento = elemento.value;
+						var valorelemento = elemento.value;
 						if (valorelemento.length>maxsize){
 							return false;
 						}
@@ -67,6 +67,13 @@ class validacionesatomicas{
 						}
 						break;
 					case 'file':
+						var valorelemento = elemento.files[0].name;
+						if (valorelemento.length<minsize){
+							return false;
+						}
+						else{
+							return true;
+						}
 						break;
 					default:
 						break;
