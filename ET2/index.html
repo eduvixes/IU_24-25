@@ -15,14 +15,15 @@
 	<script type="text/javascript" src="./js_core/DOM_class.js"></script>
 	<script type="text/javascript" src="./js_base/EntidadAbstracta.js"></script>
 
-	<!-- aqui los ficheros implementados para la ET2 -->
+	
 	<script type="text/javascript" src="./js_app/Tests_class.js"></script>
 	<script type="text/javascript" src="./js_app/Validaciones_Atomicas.js"></script>
-	<script type="text/javascript" src="./js_app/funcionalidad.js"></script>
-	<script type="text/javascript" src="./js_app/persona.js"></script>
+	<script type="text/javascript" src="./js_app/analysis_preparation.js"></script>
+	<script type="text/javascript" src="./js_app/project.js"></script>
 
-	<!-- aqui los ficheros de test de cada entidad -->
-	<script type="text/javascript" src="./js_app/tests_persona.js"></script>
+	
+	<script type="text/javascript" src="./js_app/tests_analysis_preparation.js"></script>
+	<script type="text/javascript" src="./js_app/tests_project.js"></script>
 
 	<!-- este es el script que carga las librerias ajax que usamos para acceder al back -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -31,7 +32,7 @@
 
 <body onload="">
 
-	<header id='header_page' class='bordeado'><spam class="text_titulo_app">MIS DATOS PERSONALES</spam>
+	<header id='header_page' class='bordeado'><spam class="text_titulo_app"></spam>
 		
 		<img src="./iconos/Spain.png" onclick="setLang('ES');" />
         <img src="./iconos/United-Kingdom.png" onclick="setLang('EN');" />
@@ -43,8 +44,8 @@
 
 	<aside id='div-menu'>
 		<ol>
-		    <li class="opcionmenu"><span class="text_datos_personales" onclick="validar = new persona();">Datos Personales</span></li>
-		    <li class="opcionmenu"><span class="text_funcionalidad" onclick="validar = new funcionalidad();">Funcionalidad</span></li>
+		    <li class="opcionmenu"><span class="text_project" onclick="validar = new project();"></span></li>
+		    <li class="opcionmenu"><span class="text_analysis_prep" onclick="validar = new analysis_preparation();"></span></li>
 	  	</ol>
 	</aside>
 
@@ -62,12 +63,6 @@
 				<select id="seleccioncolumnas" size="2" multiple >
 				</select>
 				
-				<!--
-				<div id="checkboxcolumnas" class="dropdown">
-					<button>Selecciona Columnas</button>
-				</div>
-				<select id="mySelect" multiple></select>
-				-->
         	</div>
     	
         	<table id="tabladatosalumnos">
