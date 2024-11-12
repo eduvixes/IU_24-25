@@ -74,6 +74,7 @@ class EntidadAbstracta extends DOM_class{
 				
 				document.getElementById("id_tabla_datos").style.display = 'block';
                 document.getElementById('muestradatostabla').className = 'RECORDSET_VACIO';
+		setLang();
             }
 
         });
