@@ -1,4 +1,4 @@
-class DOM_class{
+class DOM_class extends test{
 
     constructor(){
 

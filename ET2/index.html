@@ -101,7 +101,6 @@
 				<tbody id="tablaresultadostest">
 				</tbody>
 			</table>
-			<img src="./iconos/BACK.png" onclick="validar.cerrar_test();" />
 		</div>
 
 		<div class = "" id="contenidoPruebas">
@@ -112,7 +111,18 @@
 	            	<tbody id="tablaresultadosprueba">
 					</tbody>
 	            </table>
-			<img src="./iconos/BACK.png" onclick="validar.cerrar_pruebas();" />
+	        </div>
+	    </div>
+
+		<div class = "" id="resultadopruebas">
+	        <h1 id="res_pruebas">Resultado pruebas</h1>
+	        <p id="resultadotest"></p>
+	        <div id="div_resultado_prueba">
+	            <table id="resultado_prueba" border="1">
+	            	<tbody id="salidaresultadosprueba">
+					</tbody>
+	            </table>
+			<img src="./iconos/BACK.png" onclick="validar.cerrar_test();" />
 	        </div>
 	    </div>
 
@@ -122,6 +132,16 @@
 
 	<footer class='bordeado'><spam class="text_titulo_pie">Pie de página</spam></footer>
 	
+	<!-- Overlay para acompañar el modal -->
+	<div id="modal_action_overlay"></div>
+
+	<!-- Modal para mostrar los errores de accion -->
+	<div id="error_action_modal">
+		<span id="error_action_msg"></span>
+		<!--<img src="./iconos/BACK.png" onclick="cerrarModalError();" />-->
+		<button onclick="validar.cerrarModalError()">X</button>
+	</div>
+	
 	<script type="text/javascript">
 
 		document.getElementById('div-menu').style.display = 'none';
@@ -130,8 +150,8 @@
 		document.getElementById('title_page').style.display = 'none';
 		document.getElementById('botonTEST').style.display = 'none';
 		document.getElementById('div_IU_test').style.display = 'none';
-		document.getElementById('contenidoTests').style.display = 'none';
-		document.getElementById('contenidoPruebas').style.display = 'none';
+		// poner no visible el modal de error de accion
+		document.getElementById('error_action_modal').style.display = 'none';
 
 		function menu_work(){
 			if (document.getElementById('div-menu').style.display == 'none'){

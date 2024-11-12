@@ -13,32 +13,14 @@ class EntidadAbstracta extends DOM_class{
 
 		this.access_functions = new ExternalAccess();
 		this.validaciones = new validacionesatomicas();
-		this.test = new test(this.entidad);
 
-		// mostrar boton de test una vez creada la clase de entidad
-		this.mostrar_boton_test();
-
-		// poner no visible los test y vaciarlos
-		document.getElementById('div_IU_test').style.display = 'none';
-		this.cerrar_test();
-		this.cerrar_pruebas();
 		
 		this.SEARCH();
 
 
 	}
 
-	/*
-
-	crearTablaDatos(){
-
-		document.getElementById("id_tabla_datos").style.display = 'block';
-		this.mostrarTitulos(this.columnasamostrar);
-		this.mostrarDatos(this.entidad, this.datos, this.columnasamostrar);
 	
-	}
-
-	*/
 
 	crearTablaDatos(){
 
@@ -70,16 +52,6 @@ class EntidadAbstracta extends DOM_class{
 
 	}
 
-	/*
-	cargar_formulario_html(){
-		return false;
-	}
-
-	cargar_formulario_dinamico(){
-		return false;
-	}
-
-*/
 	async SEARCH(){
     
         await this.access_functions.peticionBackGeneral('IU_form', this.entidad, 'SEARCH')
@@ -87,6 +59,8 @@ class EntidadAbstracta extends DOM_class{
             
             //limpiar el formulario
         	this.cargar_formulario_html();
+			//quito los class de la muestra de filas
+			document.getElementById('muestradatostabla').removeAttr("class");
 
             //poner el div del formulario no visible
             document.getElementById("div_IU_form").style.display = 'none';
@@ -97,9 +71,9 @@ class EntidadAbstracta extends DOM_class{
             	this.crearTablaDatos();
             }
             else{
+				
 				document.getElementById("id_tabla_datos").style.display = 'block';
-				this.mostrarTitulos(this.columnasamostrar);
-                document.getElementById('muestradatostabla').innerHTML = 'no hay datos coincidentes con la busqueda';
+                document.getElementById('muestradatostabla').className = 'RECORDSET_VACIO';
             }
 
         });
@@ -123,9 +97,12 @@ class EntidadAbstracta extends DOM_class{
 
 	        }
 	        else{
+				
+				// mostrar mensaje error accion
+	        	// alert('error : '+respuesta['code']);
 
-	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+				// Usando modal
+				this.abrirModalError(respuesta['code']);
 	        }
 
         });
@@ -150,7 +127,10 @@ class EntidadAbstracta extends DOM_class{
 	        else{
 
 	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+	        	// alert('error : '+respuesta['code']);
+
+				// Usando modal
+				this.abrirModalError(respuesta['code']);
 	        }
 
         });
@@ -176,7 +156,10 @@ class EntidadAbstracta extends DOM_class{
 	        else{
 
 	        	// mostrar mensaje error accion
-	        	alert('error : '+respuesta['code']);
+	        	// alert('error : '+respuesta['code']);
+
+				// Usando modal
+				this.abrirModalError(respuesta['code']);
 	        }
 
         });
@@ -184,14 +167,6 @@ class EntidadAbstracta extends DOM_class{
     }
 
 	cambiacolumnastabla(atributo){
-
-		/*if (this.columnasamostrar.includes(atributo)){
-			this.columnasamostrar = this.columnasamostrar.filter(columna => columna != atributo);
-			this.mostrarDatos();
-		}
-		else{
-			alert('no esta');
-		}*/
 
 		document.querySelector("th[class='"+atributo+"']").style.display = 'none';
 
