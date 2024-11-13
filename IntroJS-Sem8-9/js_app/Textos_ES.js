@@ -66,7 +66,7 @@ let textos_ES = {
 	'foto_persona_format_KO':'',
 
 	//errores acciones
-	
+	'RECORDSET_VACIO' : 'No hay coincidencia para la búsqueda',
 	'dni_es_nulo_KO':'El dni no puede ser vacio',
 
 	'admin_no_se_puede_modificar_KO':'El admin no se puede modificar',

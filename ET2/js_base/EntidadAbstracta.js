@@ -60,7 +60,7 @@ class EntidadAbstracta extends DOM_class{
             //limpiar el formulario
         	this.cargar_formulario_html();
 			//quito los class de la muestra de filas
-			document.getElementById('muestradatostabla').removeAttr("class");
+			document.getElementById('muestradatostabla').removeAttribute('class');
 
             //poner el div del formulario no visible
             document.getElementById("div_IU_form").style.display = 'none';
@@ -73,8 +73,11 @@ class EntidadAbstracta extends DOM_class{
             else{
 				
 				document.getElementById("id_tabla_datos").style.display = 'block';
+				document.getElementById('muestradatostabla').innerHTML = '';
                 document.getElementById('muestradatostabla').className = 'RECORDSET_VACIO';
             }
+
+			setLang();
 
         });
     

@@ -58,7 +58,7 @@ class test{
 
 
         for (let i=0;i<this.array_pruebas.length;i++){
-            console.log(this.array_pruebas[i]);
+
             var campotest = this.array_pruebas[i][1];
             var numdeftest = this.array_pruebas[i][2];
             var numprueba = this.array_pruebas[i][3];
@@ -116,7 +116,6 @@ class test{
         let salidatest = `<tr><th>NumDefTest</th><th>NumPrueba</th><th>Campo</th><th>Prueba</th><th>Accion</th><th>valor</th><th>Respuesta Test</th><th>Respuesta esperada</th><th>Resultado</th></tr>`
 
         for (let i=0;i<this.array_pruebas_file.length;i++){
-            console.log(this.array_pruebas_file[i]);
 
             var campotest = this.array_pruebas_file[i][1];
             var numdeftest = this.array_pruebas_file[i][2];
