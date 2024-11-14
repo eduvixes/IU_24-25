@@ -7,6 +7,7 @@ let textos_ES = {
 	'text_datos_personales': 'Datos Personales',
 	'text_funcionalidad': 'Funcionalidades',
 	'text_titulo_page_persona' : 'Gestión de Datos Personales',
+	'text_titulo_page_funcionalidad' : 'Gestión de Funcionalidades',
 	'text_contenido_titulo_form_persona_ADD': 'Formulario Alta Datos Personales',
 	'text_contenido_titulo_form_persona_EDIT': 'Formulario Modificación Datos Personales',
 

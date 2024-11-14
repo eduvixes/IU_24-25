@@ -14,7 +14,7 @@ class EntidadAbstracta extends DOM_class{
 		this.access_functions = new ExternalAccess();
 		this.validaciones = new validacionesatomicas();
 
-		
+		this.cerrar_test()
 		this.SEARCH();
 
 
@@ -66,17 +66,9 @@ class EntidadAbstracta extends DOM_class{
             document.getElementById("div_IU_form").style.display = 'none';
 
             this.datos = respuesta['resource'];
-
-            if (respuesta['code'] == 'RECORDSET_DATOS'){
-            	this.crearTablaDatos();
-            }
-            else{
-				
-				document.getElementById("id_tabla_datos").style.display = 'block';
-				document.getElementById('muestradatostabla').innerHTML = '';
-                document.getElementById('muestradatostabla').className = 'RECORDSET_VACIO';
-            }
-
+           
+           	this.crearTablaDatos();
+           
 			setLang();
 
         });
