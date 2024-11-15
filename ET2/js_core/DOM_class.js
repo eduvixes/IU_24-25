@@ -96,8 +96,6 @@ hacertabla(){
     }
     else{
 
-        this.atributos = Object.keys(this.datos[0]);
-
         var textolineatitulos = '<tr>';
 
         for (let atributo of this.atributos){
@@ -195,6 +193,13 @@ crearboton(entidad, accion, parametros){
         document.getElementById("id_tabla_datos").style.display = 'none';
         document.getElementById("title_page").style.display = 'none';
 
+        this.ocultar_boton_test();
+        this.cerrar_test();
+
+    }
+
+    ocultar_boton_test(){
+        document.getElementById('botonTEST').style.display = 'none';
     }
 
     mostrar_boton_test(){

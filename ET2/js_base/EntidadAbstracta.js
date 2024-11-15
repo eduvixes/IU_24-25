@@ -32,7 +32,7 @@ class EntidadAbstracta extends DOM_class{
 		this.construirSelect();
 		
 		//ocultar segun columnasamostrar
-		this.mostrarocultarcolumnas();
+		if (this.datos != "") {this.mostrarocultarcolumnas()};
 
 	}
 
@@ -66,6 +66,7 @@ class EntidadAbstracta extends DOM_class{
             document.getElementById("div_IU_form").style.display = 'none';
 
             this.datos = respuesta['resource'];
+			this.atributos = Object.keys(respuesta['criteriosbusqueda']);
            
            	this.crearTablaDatos();
            

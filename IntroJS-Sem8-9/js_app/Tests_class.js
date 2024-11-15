@@ -93,7 +93,7 @@ class test{
             }
 
             // construyo la fila de salida de la prueba realizada
-            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+def[3]+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+`</td><td>`+resultadoestetest+`</td></tr>`
+            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+def[3]+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+'('+this.traduccion(respuestatest)+')'+`</td><td>`+resultadoestetest+`</td></tr>`
             salidatest += lineasalida;
 
         }
@@ -102,6 +102,39 @@ class test{
         document.getElementById('salidaresultadosprueba').innerHTML += salidatest;
         document.getElementById('resultadopruebas').style.display = 'block';
 
+    }
+
+    /*Función para obtener el valor de la cookie*/
+    getCookie(name) {
+
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+
+    return null;
+
+}
+
+    traduccion(codigo){
+        var lang = this.getCookie('lang');
+        var traduccion;
+        switch(lang) {
+            case 'ES' : 
+               traduccion=textos_ES;
+            break;
+            case 'EN' :
+               traduccion=textos_EN;
+            break;
+            default:
+               traduccion=textos_ES;
+            break;
+        }
+        return traduccion[codigo];
     }
 
     test_entidad_files(){
@@ -163,7 +196,7 @@ class test{
                 var resultadoestetest = 'INCORRECTO';
             }
 
-            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+clasedetest+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+`</td><td>`+resultadoestetest+`</td></tr>`
+            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+clasedetest+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+'('+this.traduccion(respuestatest)+')'+`</td><td>`+resultadoestetest+`</td></tr>`
             salidatest += lineasalida;
             
 
@@ -172,6 +205,7 @@ class test{
 
         // presento el resultado
         document.getElementById('salidaresultadosprueba').innerHTML += salidatest;
+        
         document.getElementById('resultadopruebas').style.display = 'block';
 
     }
@@ -225,9 +259,11 @@ class test{
         });
     
         document.getElementById('tablaresultadostest').innerHTML += salidatabla;
+        document.getElementById('res_estructura_tests').className = 'res_estructura_tests';
+
     
         if (filacorrecta){
-            document.getElementById('resultadodef').innerHTML = 'formato correcto en las pruebas de test';
+            document.getElementById('resultadodef').className = 'resultadodef';
         }
     
         document.getElementById('contenidoTests').style.display = 'block';
@@ -272,10 +308,10 @@ class test{
             salidatabla += salidalinea;
         });
 
-        document.getElementById('tablaresultadosprueba').innerHTML += salidatabla;
+        document.getElementById('resultadodef').className = 'resultadodef';
 
         if (filacorrecta){
-            document.getElementById('resultadoprueba').innerHTML = 'formato correcto en las pruebas';
+            document.getElementById('res_estructura_pruebas').className = 'res_estructura_pruebas';
         }
 
         document.getElementById('contenidoPruebas').style.display = 'block';
@@ -324,7 +360,7 @@ class test{
         document.getElementById('tablaresultadosprueba').innerHTML += salidatabla;
 
         if (filacorrecta){
-            document.getElementById('resultadoprueba').innerHTML = 'formato correcto en las pruebas';
+        //    document.getElementById('resultadoprueba').innerHTML = 'formato correcto en las pruebas';
         }
 
         document.getElementById('contenidoPruebas').style.display = 'block';

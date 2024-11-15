@@ -10,6 +10,12 @@ let textos_ES = {
 	'text_titulo_page_funcionalidad' : 'Gestión de Funcionalidades',
 	'text_contenido_titulo_form_persona_ADD': 'Formulario Alta Datos Personales',
 	'text_contenido_titulo_form_persona_EDIT': 'Formulario Modificación Datos Personales',
+	'res_estructura_tests':'Tabla verificacion estructura de test',
+	'resultadodef':'formato correcto estructura definicion tests',
+	'res_estructura_pruebas':'Tabla verificacion estructura de pruebas',
+	'resultadoprueba':'formato correcto estructura pruebas',
+	'res_pruebas':'Tabla ejecución de pruebas',
+	'resultadotest':'Resultado ejecucion pruebas',
 
 	// atributos
 	'dni': 'Identificación',
