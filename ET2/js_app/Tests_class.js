@@ -144,6 +144,8 @@ class test{
 
                 // Set your input `files` to the file list
                 document.getElementById(campotest).files = fileList;
+            } else{
+                document.getElementById(campotest).files = undefined;
             }
 
             //llamo a funcion
