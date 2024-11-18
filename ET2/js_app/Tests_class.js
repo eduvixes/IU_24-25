@@ -45,20 +45,22 @@ class test{
 
     test_entidad(){
 
-        //cargo formulario 
-        this.cargar_formulario_html();
-
-        // cargo el boton pq sino da un error en la funcion de dibujado del mensaje de error
-        let botonsumit = document.createElement('input');
-        botonsumit.id = 'submit_button';
-        document.getElementById('IU_form').append(botonsumit);
+        
 
         // construyo el titulo de la tabla de muestra
         let salidatest = `<tr><th>NumDefTest</th><th>NumPrueba</th><th>campo</th><th>Prueba</th><th>Accion</th><th>valor</th><th>Respuesta Test</th><th>Respuesta esperada</th><th>Resultado</th></tr>`
 
 
         for (let i=0;i<this.array_pruebas.length;i++){
-            console.log(this.array_pruebas[i]);
+
+            //cargo formulario limpio
+            this.cargar_formulario_html();
+
+            // cargo el boton pq sino da un error en la funcion de dibujado del mensaje de error
+            let botonsumit = document.createElement('input');
+            botonsumit.id = 'submit_button';
+            document.getElementById('IU_form').append(botonsumit);
+            
             var campotest = this.array_pruebas[i][1];
             var numdeftest = this.array_pruebas[i][2];
             var numprueba = this.array_pruebas[i][3];
@@ -93,7 +95,7 @@ class test{
             }
 
             // construyo la fila de salida de la prueba realizada
-            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+def[3]+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+`</td><td>`+resultadoestetest+`</td></tr>`
+            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+def[3]+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+'('+this.traduccion(respuestatest)+')'+`</td><td>`+resultadoestetest+`</td></tr>`;
             salidatest += lineasalida;
 
         }
@@ -104,20 +106,51 @@ class test{
 
     }
 
+    /*Función para obtener el valor de la cookie*/
+    getCookie(name) {
+
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+    
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+    
+        return null;
+    
+    }
+    
+        traduccion(codigo){
+            var lang = this.getCookie('lang');
+            var traduccion;
+            switch(lang) {
+                case 'ES' : 
+                   traduccion=textos_ES;
+                break;
+                case 'EN' :
+                   traduccion=textos_EN;
+                break;
+                default:
+                   traduccion=textos_ES;
+                break;
+            }
+            return traduccion[codigo];
+        }
+
     test_entidad_files(){
-
-        //cargo formulario 
-        this.cargar_formulario_html();
-
-        let botonsumit = document.createElement('input');
-        botonsumit.id = 'submit_button';
-        document.getElementById('IU_form').append(botonsumit);
 
         let salidatest = `<tr><th>NumDefTest</th><th>NumPrueba</th><th>Campo</th><th>Prueba</th><th>Accion</th><th>valor</th><th>Respuesta Test</th><th>Respuesta esperada</th><th>Resultado</th></tr>`
 
         for (let i=0;i<this.array_pruebas_file.length;i++){
-            console.log(this.array_pruebas_file[i]);
 
+            //cargo formulario limpio
+            this.cargar_formulario_html();
+            let botonsumit = document.createElement('input');
+            botonsumit.id = 'submit_button';
+            document.getElementById('IU_form').append(botonsumit);
+    
             var campotest = this.array_pruebas_file[i][1];
             var numdeftest = this.array_pruebas_file[i][2];
             var numprueba = this.array_pruebas_file[i][3];
@@ -145,7 +178,7 @@ class test{
                 // Set your input `files` to the file list
                 document.getElementById(campotest).files = fileList;
             }
-
+            
             //llamo a funcion
             if (acciontest == 'SEARCH'){
                 var resultadotest = eval('this.comprobar_'+campotest+'_SEARCH()')
@@ -164,7 +197,7 @@ class test{
                 var resultadoestetest = 'INCORRECTO';
             }
 
-            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+clasedetest+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+`</td><td>`+resultadoestetest+`</td></tr>`
+            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+clasedetest+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+'('+this.traduccion(respuestatest)+')'+`</td><td>`+resultadoestetest+`</td></tr>`;
             salidatest += lineasalida;
             
 

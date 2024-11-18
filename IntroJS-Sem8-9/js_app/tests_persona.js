@@ -54,6 +54,7 @@ let pruebas_file_persona = Array(
     Array('persona','nuevo_foto_persona',11,11,'ADD','fichero ok',Array('nombrejpg',Array('image/jpeg'),20000),true),
     Array('persona','nuevo_foto_persona',12,12,'EDIT','noexiste',Array(),true),
     Array('persona','nuevo_foto_persona',13,13,'EDIT','cumple nombre fichero',Array('1111',Array('image/jpeg'),20000),'nuevo_foto_persona_format_name_file_KO'),
+    Array('persona','nuevo_foto_persona',12,12,'EDIT','noexiste',Array(),true),
     Array('persona','nuevo_foto_persona',14,14,'EDIT','type_file',Array('nombrejpg',Array('img/pdf'),20000),'nuevo_foto_persona_type_file_KO'),
     Array('persona','nuevo_foto_persona',15,15,'EDIT','max_size_file',Array('nombrejpg',Array('image/jpeg'),200000000),'nuevo_foto_persona_max_size_file_KO'),
     Array('persona','nuevo_foto_persona',16,16,'EDIT','min_size_name',Array('g',Array('image/jpeg'),20000),'nuevo_foto_persona_min_size_name_KO'),

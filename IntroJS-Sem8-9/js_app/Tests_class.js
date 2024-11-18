@@ -93,7 +93,7 @@ class test{
             }
 
             // construyo la fila de salida de la prueba realizada
-            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+def[3]+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+'('+this.traduccion(respuestatest)+')'+`</td><td>`+resultadoestetest+`</td></tr>`
+            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+def[3]+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+'('+this.traduccion(respuestatest)+')'+`</td><td>`+resultadoestetest+`</td></tr>`;
             salidatest += lineasalida;
 
         }
@@ -196,7 +196,7 @@ class test{
                 var resultadoestetest = 'INCORRECTO';
             }
 
-            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+clasedetest+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+'('+this.traduccion(respuestatest)+')'+`</td><td>`+resultadoestetest+`</td></tr>`
+            var lineasalida = `<tr><td>`+numdeftest+`</td><td>`+numprueba+`</td><td>`+campotest+`</td><td>`+clasedetest+`</td><td>`+acciontest+`</td><td>`+valortest+`</td><td>`+resultadotest+`</td><td>`+respuestatest+'('+this.traduccion(respuestatest)+')'+`</td><td>`+resultadoestetest+`</td></tr>`;
             salidatest += lineasalida;
             
 
@@ -308,7 +308,7 @@ class test{
             salidatabla += salidalinea;
         });
 
-        document.getElementById('resultadodef').className = 'resultadodef';
+        document.getElementById('resultadopruebas').className = 'resultadopruebas';
 
         if (filacorrecta){
             document.getElementById('res_estructura_pruebas').className = 'res_estructura_pruebas';
