@@ -126,7 +126,23 @@ hacertabla(){
                     textolineadatos += '<td class="tabla-td-'+clave+'">'+valorcolumna+'</td>';
                 }
                 else{
-                    textolineadatos += '<td class="tabla-td-'+clave+'">'+this.datos[i][clave]+'</td>';
+                    // limpieza codigo no deseado incrustado html y script
+                    let san = (obj) => {
+                        let value = obj?.toString() || '';
+                        let sanitizedObj = value.replace(/[&<>"'`]/g, function(match) {
+                            switch (match) {
+                                case '&': return '&amp;';
+                                case '<': return '&lt;';
+                                case '>': return '&gt;';
+                                case '"': return '&quot;';
+                                case "'": return '&#039;';
+                                case '`': return '&#x60;';
+                            }
+                        });
+                        return sanitizedObj;
+                    }
+                    let valorE = san(this.datos[i][clave]);
+                    textolineadatos += '<td class="tabla-td-'+clave+'">'+valorE+'</td>';
                 }
 
             }
